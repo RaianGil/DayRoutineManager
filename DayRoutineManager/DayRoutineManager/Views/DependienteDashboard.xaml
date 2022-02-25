@@ -4,6 +4,7 @@
              x:Class="DayRoutineManager.Views.DependienteDashboard">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Hello, XAML!" />
             
         </StackLayout>
     </ContentPage.Content>

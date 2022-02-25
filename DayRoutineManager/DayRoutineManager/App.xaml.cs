@@ -12,7 +12,8 @@ namespace DayRoutineManager
 
             var conn = Connection.LocalConn.get();
             conn.CreateTable<Models.Dependiente>();
-            MainPage = new NavigationPage(new Views.DependienteDashboard());
+         //   MainPage = new NavigationPage(new Views.DependienteDashboard());
+            MainPage = new Login();
         }
 
         protected override void OnStart()
