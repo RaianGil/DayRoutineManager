@@ -5,37 +5,31 @@
               Background="#f5f5f5">
         
     <ContentPage.Content >
-        <StackLayout Padding="20"  VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
-
-            <Image Source="dayliRoutine" HeightRequest="100" WidthRequest="100" />
+        <StackLayout Padding="20,0,20,20"  VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+            <Grid>
+                <Image Source="LogoCompletoSinFondo" />
+            </Grid>
             <Label Text="Bienvenido!"  
                     VerticalOptions="Start"
                    HorizontalOptions="Center"
-                    TextColor="Black" FontSize="50" FontFamily="Arial" VerticalTextAlignment="Center"   />
+                    TextColor="#5d3569" FontSize="50" FontFamily="Arial" VerticalTextAlignment="Center"   />
 
-            <Label Text="Registrese con los siguientes roles: "  
-                    TextColor="Black"  HeightRequest="200" Margin="10"
-                   FontSize="20"
-                    VerticalOptions="Start"
-                   HorizontalOptions="Center"/>       
-            
-                <Button
-                Text="Administrador"                
-                BorderColor="#e1bee7"
+            <Button
+                Text="Iniciar Sesion"                
+                BorderColor="#feb7c7"
                 BorderWidth="1.5"
-                CornerRadius="10"
+                CornerRadius="15"
                 VerticalOptions="EndAndExpand"   
-                TextColor="White" Margin="10" Background="#e1bee7">
-                </Button>
-                
-                <Button              
-                Text="Dependiente"
-                BorderColor="#f5f5f5"
-                BorderWidth="1.5"
-                CornerRadius="10"
-                TextColor="#e1bee7" Margin="10" Background="white"
-                VerticalOptions="EndAndExpand" >
-                </Button>
+                TextColor="White" Margin="10" Background="#feb7c7" />
+
+
+            <Button Text="Unirte"
+                    BorderColor="#dfcff4"
+                    BorderWidth="1.5"
+                    CornerRadius="15"
+                    TextColor="#fff" Margin="10,0" Background="#dfcff4"
+                    VerticalOptions="EndAndExpand" />
+
 
         </StackLayout>
 

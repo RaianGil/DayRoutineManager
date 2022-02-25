@@ -83,7 +83,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LogoCompletoSinFondo.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DayRoutineManager\DayRoutineManager.csproj">
       <Project>{791D1A68-49BE-49F7-B7BD-9B31F56C002B}</Project>
