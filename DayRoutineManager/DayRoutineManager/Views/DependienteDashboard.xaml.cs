@@ -43,8 +43,8 @@ namespace DayRoutineManager.Views
 
         private void loadTasks()
         {
-            var listRecordatorio = new ObservableCollection<Recortadorio>();
-            var getRecordatorio = conn.Query<Recortadorio>($"select * from recordatorio where id_dependiente = '{Preferences.Get("ID_DEPENDIENTE","")}'");
+            var listRecordatorio = new ObservableCollection<RecortadorioModel>();
+            var getRecordatorio = conn.Query<RecortadorioModel>($"select * from recordatorio where id_dependiente = '{Preferences.Get("ID_DEPENDIENTE","")}'");
             if (getRecordatorio.Any())
             {
                 foreach (var Recordatorio in getRecordatorio)

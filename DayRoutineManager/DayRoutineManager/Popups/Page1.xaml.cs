@@ -16,5 +16,10 @@ namespace DayRoutineManager.Popups
         {
             InitializeComponent();
         }
+
+        private void BtnAgregar_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

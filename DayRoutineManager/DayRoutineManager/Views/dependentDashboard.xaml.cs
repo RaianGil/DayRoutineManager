@@ -25,12 +25,11 @@ namespace DayRoutineManager
         private void loadDependecies()
         {
             var conn = Connection.LocalConn.get();
-            var listaTareas = new ObservableCollection<Recortadorio>();
-            var getTareas = conn.Query<Recortadorio>("Select * From Recortadorio");
+            var listaTareas = new ObservableCollection<RecortadorioModel>();
+            var getTareas = conn.Query<RecortadorioModel>("Select * From Recortadorio");
             foreach (var tarea in getTareas)
-                listaTareas.Add(tarea);
+            listaTareas.Add(tarea);
             lvRecordatorios.ItemsSource = listaTareas;
-
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DayRoutineManager.Models;
+using DayRoutineManager.TblModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +18,18 @@ namespace DayRoutineManager.Popups
         {
             InitializeComponent();
         }
-    }
+
+        private void BtnAgregar_Clicked(object sender, EventArgs e)
+        {
+            var conn = Connection.LocalConn.get();
+            var insertDependiente = new AdminDependiente
+            {
+                AdminDependiente_id = Guid.NewGuid().ToString(),
+                codigo_dependiente = Codigotxt.Text, 
+                Nombre_dependiente = Nombretxt.Text
+            };
+            conn.Insert(insertDependiente);
+    
+         }
+     }
 }

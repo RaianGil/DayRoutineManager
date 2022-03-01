@@ -4,10 +4,8 @@ using System.Text;
 
 namespace DayRoutineManager.Models
 {
-    class Recortadorio
+    class RecortadorioModel
     {
-        public string id_recordatorio { get; set; }
-        public string id_dependiente { get; set; }
         public string titulo_recordatorio { get; set; }
         public string descripcion_recordatorio { get; set; }
         public string tipo_recordatorio { get; set; }

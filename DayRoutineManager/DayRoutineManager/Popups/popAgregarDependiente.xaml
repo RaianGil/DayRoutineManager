@@ -9,6 +9,13 @@
                 <Grid>
                 <Label Text="Agregar Dependiente" 
                        TextColor="Black" />
+                    
+                    <Entry x:Name="Nombretxt" Placeholder="Nombre"/>
+
+                    <Entry x:Name="Codigotxt" Placeholder="Codigo"/>
+
+                    <Button x:Name="BtnAgregar" Clicked="BtnAgregar_Clicked"/>
+
                 </Grid>              
             </Frame>
         </StackLayout>
