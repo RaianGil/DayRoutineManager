@@ -9,7 +9,6 @@ namespace DayRoutineManager
         public App()
         {
             InitializeComponent();
-
             var conn = Connection.LocalConn.get();
             conn.CreateTable<Models.Dependiente>();
             MainPage = new NavigationPage(new Views.DependienteDashboard());
