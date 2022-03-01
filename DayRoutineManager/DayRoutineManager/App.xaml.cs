@@ -12,6 +12,7 @@ namespace DayRoutineManager
             var conn = Connection.LocalConn.get();
             conn.CreateTable<Models.Dependiente>();
             conn.CreateTable<Models.Recortadorio>();
+            conn.CreateTable<Models.DependienteAdmin>();
             // MainPage = new NavigationPage(new Views.DependienteDashboard());
             // MainPage = new Login();
             // MainPage = new Dashboard();

@@ -8,7 +8,7 @@
             <!--Header-->
             <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#feb7c7">
                 <Image Source="LogoCompletoSinFondo" WidthRequest="60"  Margin="10,0,0,0"></Image>
-                <Label Text="Ruth Aquino"
+                <Label x:Name="CodigoDependiente"
                        Padding="20,20,0,0"
                        FontSize="Large"
                        TextColor="White"

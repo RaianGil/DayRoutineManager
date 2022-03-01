@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Plugin.DeviceInfo;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,11 +14,13 @@ namespace DayRoutineManager
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class dependentDashboard : ContentPage
     {
-
+        
+        
         public dependentDashboard()
         {
             InitializeComponent();
             loadDependecies();
+            CodigoDependiente.Text = CrossDeviceInfo.Current.Id;
         }
         private void loadDependecies()
         {
@@ -28,6 +30,7 @@ namespace DayRoutineManager
             foreach (var tarea in getTareas)
                 listaTareas.Add(tarea);
             lvRecordatorios.ItemsSource = listaTareas;
+
         }
     }
 }
