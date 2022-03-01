@@ -13,5 +13,6 @@ namespace DayRoutineManager.Models
         public string tipo_recordatorio { get; set; }
         public DateTime fecha_inicio { get; set; }
         public DateTime fecha_fin { get; set; }
+        public string fecha_inicio_formated { get; set; }
     }
 }
