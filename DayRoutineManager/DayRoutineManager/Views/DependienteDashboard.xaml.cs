@@ -1,6 +1,6 @@
 ﻿using Plugin.DeviceInfo;
 using System;
-using DayRoutineManager.Models;
+using DayRoutineManager.TblModels;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -43,8 +43,8 @@ namespace DayRoutineManager.Views
 
         private void loadTasks()
         {
-            var listRecordatorio = new ObservableCollection<RecortadorioModel>();
-            var getRecordatorio = conn.Query<RecortadorioModel>($"select * from recordatorio where id_dependiente = '{Preferences.Get("ID_DEPENDIENTE","")}'");
+            var listRecordatorio = new ObservableCollection<Recordatorio>();
+            var getRecordatorio = conn.Query<Recordatorio>($"select * from recordatorio where id_dependiente = '{Preferences.Get("ID_DEPENDIENTE","")}'");
             if (getRecordatorio.Any())
             {
                 foreach (var Recordatorio in getRecordatorio)

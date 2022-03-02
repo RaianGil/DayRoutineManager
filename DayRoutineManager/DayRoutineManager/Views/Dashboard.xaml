@@ -45,7 +45,7 @@
                                                 <StackLayout Background="#feb7c7" 
                                                              Orientation="Horizontal" 
                                                              Margin="0"  
-                                                             HeightRequest="40" >
+                                                             HeightRequest="40">
                                                     
                                                     <Label Text="{Binding Nombre_dependiente}"
                                                            FontSize="20" 

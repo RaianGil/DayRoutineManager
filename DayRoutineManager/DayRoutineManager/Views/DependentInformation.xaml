@@ -32,7 +32,10 @@
                             <StackLayout  HeightRequest="160">
 
                                   <StackLayout Background="#feb7c7" Orientation="Horizontal" Margin="0"  HeightRequest="40" >
-                                    <Label Text="Tomar pastillas" FontSize="20" TextColor="White" Padding="20,6,0,0"/>
+                                    <Label Text="Tomar pastillas" 
+                                           FontSize="20" 
+                                           TextColor="White" 
+                                           Padding="20,6,0,0"/>
                                     <Image Source="candado" WidthRequest="100" HorizontalOptions="End"></Image>
                                   </StackLayout>
                                 <ScrollView>
