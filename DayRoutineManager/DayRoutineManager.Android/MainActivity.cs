@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Rg.Plugins.Popup.Services;
+using Plugin.FirebasePushNotification;
 
 namespace DayRoutineManager.Droid
 {
@@ -17,6 +18,9 @@ namespace DayRoutineManager.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+
+            FirebasePushNotificationManager.ProcessIntent(this, Intent);
         }
         public async override void OnBackPressed()
         {
