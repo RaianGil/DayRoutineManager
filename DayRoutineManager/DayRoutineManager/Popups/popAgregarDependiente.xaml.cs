@@ -25,7 +25,7 @@ namespace DayRoutineManager.Popups
             var insertDependiente = new AdminDependiente
             {
                 AdminDependiente_id = Guid.NewGuid().ToString(),
-                codigo_dependiente = Codigotxt.Text, 
+                codigo_dependiente = Codigotxt.Text,
                 Nombre_dependiente = Nombretxt.Text
             };
             conn.Insert(insertDependiente);

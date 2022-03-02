@@ -6,6 +6,7 @@ namespace DayRoutineManager.Models
 {
     class RecortadorioModel
     {
+        public string codigo_dependiente { get; set; }
         public string titulo_recordatorio { get; set; }
         public string descripcion_recordatorio { get; set; }
         public string tipo_recordatorio { get; set; }

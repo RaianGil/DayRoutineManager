@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
-using DayRoutineManager.Models;
+using DayRoutineManager.TblModels;
+using Xamarin.Essentials;
 
-namespace DayRoutineManager
+namespace DayRoutineManager.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Dashboard : ContentPage
@@ -32,11 +33,22 @@ namespace DayRoutineManager
         private void loadDependeiente()
         {
             var conn = Connection.LocalConn.get();
-            var listaTareas = new ObservableCollection<DependienteModel>();
-            var getTareas = conn.Query<DependienteModel>("Select * From Dependiente");
-            foreach (var tarea in getTareas)
-            listaTareas.Add(tarea);
-            lvDashboard.ItemsSource = listaTareas;
+            var listaDependiente = new ObservableCollection<AdminDependiente>();
+            var getDependiente = conn.Query<AdminDependiente>("Select * From AdminDependiente");
+            foreach (var tarea in getDependiente)
+                listaDependiente.Add(tarea);
+            lvDashboard.ItemsSource = listaDependiente;
+        }
+
+        private void btnAddRecordatorio_Clicked(object sender, EventArgs e)
+        {
+            var AddRecordatorio = (Button)sender;
+            var popup = new Popups.popAgregarRecordatorio
+            {
+                CloseWhenBackgroundIsClicked = true,
+                codigo_dependiente = AddRecordatorio.BindingContext.ToString()
+            };
+            PopupNavigation.Instance.PushAsync(popup);
         }
     }
 }

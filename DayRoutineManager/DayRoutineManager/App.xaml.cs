@@ -10,14 +10,14 @@ namespace DayRoutineManager
         {
             InitializeComponent();
             var conn = Connection.LocalConn.get();
-            conn.CreateTable<Models.Dependiente>();
-            conn.CreateTable<Models.RecortadorioModel>();
-            conn.CreateTable<Models.DependienteAdminModel>();
+            conn.CreateTable<TblModels.Dependiente>();
+            conn.CreateTable<TblModels.Recordatorio>();
+            conn.CreateTable<TblModels.AdminDependiente>();
             // MainPage = new NavigationPage(new Views.DependienteDashboard());
             // MainPage = new Login();
             // MainPage = new Dashboard();
             // MainPage = new DependentInformation();
-            MainPage = new Views.demoPage();
+            MainPage = new NavigationPage(new Views.Dashboard());
 
         }
        

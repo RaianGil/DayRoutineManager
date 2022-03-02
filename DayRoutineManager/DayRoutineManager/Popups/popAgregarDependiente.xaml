@@ -5,17 +5,22 @@
              x:Class="DayRoutineManager.Popups.popAgregarDependiente">
     <ContentPage.Content>
         <StackLayout  VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-            <Frame>
+            <Frame Background="#f5f5f5">
                 <Grid>
-                <Label Text="Agregar Dependiente" 
-                       TextColor="Black" />
-                    
-                    <Entry x:Name="Nombretxt" Placeholder="Nombre"/>
-
-                    <Entry x:Name="Codigotxt" Placeholder="Codigo"/>
+                    <StackLayout>
+                        <Label Text="Agregar Dependiente" 
+                               TextColor="Black" />
+                        
+                        <Entry x:Name="Nombretxt" 
+                               Placeholder="Nombre" 
+                               TextColor="Black"/>
+                        
+                        <Entry x:Name="Codigotxt"
+                               Placeholder="Codigo"
+                               TextColor="Black"/>
 
                     <Button x:Name="BtnAgregar" Clicked="BtnAgregar_Clicked"/>
-
+                    </StackLayout>
                 </Grid>              
             </Frame>
         </StackLayout>

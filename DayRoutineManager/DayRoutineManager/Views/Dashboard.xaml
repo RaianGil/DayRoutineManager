@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DayRoutineManager.Dashboard"
+             x:Class="DayRoutineManager.Views.Dashboard"
              Background="#f5f5f5" >
     <ContentPage.Content>
        
@@ -45,8 +45,9 @@
                                                 <StackLayout Background="#feb7c7" 
                                                              Orientation="Horizontal" 
                                                              Margin="0"  
-                                                             HeightRequest="40">
-                                                    
+                                                             HeightRequest="40"
+                                                             VerticalOptions="StartAndExpand">
+
                                                     <Label Text="{Binding Nombre_dependiente}"
                                                            FontSize="20" 
                                                            TextColor="White" 
@@ -58,22 +59,12 @@
                                                            HorizontalOptions="End">
                                                     </Image>
                                                 </StackLayout>
-                                                <StackLayout Background="#feb7c7" 
-                                                             Orientation="Horizontal" 
-                                                             Margin="0"  
-                                                             HeightRequest="40">
-                                                    
-                                                    <Label Text="{Binding codigo_dependiente}"
-                                                           FontSize="20" 
-                                                           TextColor="White" 
-                                                           Padding="20,6,0,0" 
-                                                           VerticalOptions="StartAndExpand"/>
-
-                                                    <Image Source="candado" 
-                                                           WidthRequest="100" 
-                                                           HorizontalOptions="End">
-                                                    </Image>
-                                                </StackLayout>
+                                                <Button x:Name="btnAddRecordatorio"
+                                                        Background="#e5d3e8"
+                                                        Text="Agregar Recordatorio"
+                                                        TextColor="White"
+                                                        BindingContext="{Binding codigo_dependiente}"
+                                                        Clicked="btnAddRecordatorio_Clicked"/>
                                             </StackLayout>
                                         </Frame>
                                     </ViewCell>

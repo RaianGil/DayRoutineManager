@@ -9,6 +9,5 @@ namespace DayRoutineManager.TblModels
     {
         [PrimaryKey]
         public string id_recordatorio { get; set; }
-        public string id_dependiente { get; set; }
     }
 }

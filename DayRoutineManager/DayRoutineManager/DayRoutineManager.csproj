@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Popups\popAgregarRecordatorio.xaml.cs">
+      <DependentUpon>popAgregarRecordatorio.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Popups\popAgregarDependiente.xaml.cs">
       <DependentUpon>popAgregarDependiente.xaml</DependentUpon>
     </Compile>
