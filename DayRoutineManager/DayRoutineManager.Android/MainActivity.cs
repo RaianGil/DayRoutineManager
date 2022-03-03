@@ -4,6 +4,9 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Rg.Plugins.Popup.Services;
+using Firebase.Messaging;
+using Firebase.Iid;
+using Android.Util;
 
 namespace DayRoutineManager.Droid
 {
