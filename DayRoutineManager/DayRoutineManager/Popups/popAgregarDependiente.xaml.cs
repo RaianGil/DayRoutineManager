@@ -24,7 +24,7 @@ namespace DayRoutineManager.Popups
 
         private void BtnAgregar_Clicked(object sender, EventArgs e)
         {
-            firebaseClient.Child("Records").PostAsync(new AdminDependiente
+            firebaseClient.Child("DependienteAdmin").PostAsync(new AdminDependiente
             {
                 AdminDependiente_id = Guid.NewGuid().ToString(),
                 codigo_dependiente = Codigotxt.Text,
