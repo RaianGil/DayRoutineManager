@@ -24,20 +24,20 @@ namespace DayRoutineManager.Views
 
         private void loginDependiente()
         {
-            var checkExist = conn.Query<Dependiente>($"select * from dependiente where codigo_dependiente = '{id_device}'");
-            if (!checkExist.Any())
-                Preferences.Set("ID_DEPENDIENTE", checkExist.First().id_dependiente);
-            else
-            {
-                string strIDDependiente = Guid.NewGuid().ToString();
-                var inDependiente = new Dependiente
-                {
-                    id_dependiente = Guid.NewGuid().ToString(),
-                    codigo_dependiente = id_device,
-                };
-                conn.Insert(inDependiente);
-                Preferences.Set("ID_DEPENDIENTE", strIDDependiente);
-            }
+            //var checkExist = conn.Query<Dependiente>($"select * from dependiente where codigo_dependiente = '{id_device}'");
+            //if (!checkExist.Any())
+            //    Preferences.Set("ID_DEPENDIENTE", checkExist.First().id_dependiente);
+            //else
+            //{
+            //    string strIDDependiente = Guid.NewGuid().ToString();
+            //    var inDependiente = new Dependiente
+            //    {
+            //        id_dependiente = Guid.NewGuid().ToString(),
+            //        codigo_dependiente = id_device,
+            //    };
+            //    conn.Insert(inDependiente);
+            //    Preferences.Set("ID_DEPENDIENTE", strIDDependiente);
+            //}
 
         }
 

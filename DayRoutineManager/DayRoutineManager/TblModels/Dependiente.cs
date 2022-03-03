@@ -7,7 +7,5 @@ namespace DayRoutineManager.TblModels
 {
     class Dependiente: Models.DependienteModel
     {
-       [PrimaryKey]
-       public string id_dependiente { get; set; }
     }
 }
