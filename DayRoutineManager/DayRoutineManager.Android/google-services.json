@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "86143434636",
+    "project_id": "dailyroutinemanager-36ce7",
+    "storage_bucket": "dailyroutinemanager-36ce7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86143434636:android:20e290e3f061608c7920a9",
+        "android_client_info": {
+          "package_name": "com.companyname.dayroutinemanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86143434636-u4jrkrscaf68ogib90olf8ga10bdvf7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdVeL8c4bVS49OqRxG5TRTcUbJqlHjYs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86143434636-u4jrkrscaf68ogib90olf8ga10bdvf7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
