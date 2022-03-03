@@ -23,6 +23,7 @@ namespace DayRoutineManager.Views
 
         private void BtnAgregarDep_Clicked(object sender, EventArgs e)
         {
+                     
             var popup = new Popups.popAgregarDependiente
             {
                 CloseWhenBackgroundIsClicked = true
