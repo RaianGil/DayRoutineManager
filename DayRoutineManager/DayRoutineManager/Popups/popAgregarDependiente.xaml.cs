@@ -2,6 +2,7 @@
 using DayRoutineManager.TblModels;
 using Firebase.Database;
 using Firebase.Database.Query;
+using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,15 @@ namespace DayRoutineManager.Popups
 
         private void BtnAgregar_Clicked(object sender, EventArgs e)
         {
+            CloudaddDependiente();
+            LocaladdDependiente();
+            Codigotxt.Text = "";
+            Nombretxt.Text = "";
+            addNotificationDependiente();
+        }
+
+        private void CloudaddDependiente()
+        {
             firebaseClient.Child("DependienteAdmin").PostAsync(new AdminDependiente
             {
                 AdminDependiente_id = Guid.NewGuid().ToString(),
@@ -31,17 +41,34 @@ namespace DayRoutineManager.Popups
                 Nombre_dependiente = Nombretxt.Text
             });
 
-            Codigotxt.Text = "";
-            Nombretxt.Text = "";
+        }
 
-           /* var conn = Connection.LocalConn.get();
+        private void LocaladdDependiente()
+        {
+            var conn = Connection.LocalConn.get();
             var insertDependiente = new AdminDependiente
-            {               
+            {
                 codigo_dependiente = Codigotxt.Text,
                 Nombre_dependiente = Nombretxt.Text
             };
-            conn.Insert(insertDependiente);*/
-    
-         }
+            conn.Insert(insertDependiente);
+        }
+
+        private void addNotificationDependiente()
+        {
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = "Datos añadidos exitosamente!",
+                Title = "Datos Actualizados",
+                ReturningData = "Datos añadidos exitosamente!",
+                NotificationId = 111,
+                Schedule =
+                {
+                    NotifyTime = DateTime.Now.AddSeconds(5)
+                }
+            };
+             NotificationCenter.Current.Show(notification);
+        }
      }
 }
