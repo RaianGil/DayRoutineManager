@@ -1,6 +1,7 @@
 ﻿using DayRoutineManager.TblModels;
 using Firebase.Database;
 using Plugin.FirebasePushNotification;
+using Plugin.LocalNotification;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,6 +23,14 @@ namespace DayRoutineManager
             // MainPage = new DependentInformation();
             MainPage = new NavigationPage(new Views.Dashboard());
             CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
+            NotificationCenter.Current.NotificationTapped += Current_NotificationTapped; ;
+        }
+
+        private void Current_NotificationTapped(Plugin.LocalNotification.EventArgs.NotificationEventArgs e)
+        {
+             MainPage = new NavigationPage(new Views.DependienteDashboard());
+            //throw new NavigationPage(new Views.DependienteDashboard());
+             //this.MainPage.DisplayActionSheet(dependentDashboard)
         }
 
         private void Current_OnTokenRefresh(object source, FirebasePushNotificationTokenEventArgs e)
