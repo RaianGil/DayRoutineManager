@@ -48,6 +48,7 @@ namespace DayRoutineManager.Popups
             var conn = Connection.LocalConn.get();
             var insertDependiente = new AdminDependiente
             {
+                AdminDependiente_id = Guid.NewGuid().ToString(),
                 codigo_dependiente = Codigotxt.Text,
                 Nombre_dependiente = Nombretxt.Text
             };
@@ -65,7 +66,7 @@ namespace DayRoutineManager.Popups
                 NotificationId = 111,
                 Schedule =
                 {
-                    NotifyTime = DateTime.Now.AddSeconds(5)
+                    NotifyTime = DateTime.Parse("03/04/2022 12:30")
                 }
             };
              NotificationCenter.Current.Show(notification);
