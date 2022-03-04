@@ -9,7 +9,7 @@ using Plugin.DeviceInfo;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DayRoutineManager
+namespace DayRoutineManager.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class dependentDashboard : ContentPage

@@ -28,7 +28,7 @@ namespace DayRoutineManager
 
         private void Current_NotificationTapped(Plugin.LocalNotification.EventArgs.NotificationEventArgs e)
         {
-             MainPage = new NavigationPage(new Views.DependienteDashboard());
+             MainPage = new NavigationPage(new Views.dependentDashboard());
             //throw new NavigationPage(new Views.DependienteDashboard());
              //this.MainPage.DisplayActionSheet(dependentDashboard)
         }
