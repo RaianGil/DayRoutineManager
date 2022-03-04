@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.OS;
 using Rg.Plugins.Popup.Services;
 using Plugin.LocalNotification;
+using Android.Content;
 
 namespace DayRoutineManager.Droid
 {
@@ -19,10 +20,18 @@ namespace DayRoutineManager.Droid
             Plugin.LocalNotification.Platform.Droid.NotificationChannelRequest 
             { Importance = NotificationImportance.Max });
 
+            NotificationCenter.NotifyNotificationTapped(Intent);
+
             Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+        }
+
+        protected override void OnNewIntent(Intent intent)
+        {
+            NotificationCenter.NotifyNotificationTapped(intent);
+            base.OnNewIntent(intent);
         }
         public async override void OnBackPressed()
         {
