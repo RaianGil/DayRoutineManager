@@ -1,4 +1,6 @@
-﻿using Plugin.FirebasePushNotification;
+﻿using DayRoutineManager.TblModels;
+using Firebase.Database;
+using Plugin.FirebasePushNotification;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,6 +27,8 @@ namespace DayRoutineManager
         private void Current_OnTokenRefresh(object source, FirebasePushNotificationTokenEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine($"Token: {e.Token}");
+            var sendToken = new Service.DBFirebase();
+            sendToken.sendToken(e.Token);
         }
         protected override void OnStart()
         {
