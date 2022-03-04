@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Plugin.DeviceInfo;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using DayRoutineManager.TblModels;
 
 namespace DayRoutineManager.Views
 {
@@ -26,7 +27,7 @@ namespace DayRoutineManager.Views
         {
             var conn = Connection.LocalConn.get();
             var listaTareas = new ObservableCollection<RecortadorioModel>();
-            var getTareas = conn.Query<RecortadorioModel>("Select * From Recortadorio");
+            var getTareas = conn.Query<Recordatorio>("Select * From Recordatorio");
             foreach (var tarea in getTareas)
             listaTareas.Add(tarea);
             lvRecordatorios.ItemsSource = listaTareas;
