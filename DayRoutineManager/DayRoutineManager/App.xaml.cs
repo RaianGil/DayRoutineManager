@@ -24,7 +24,7 @@ namespace DayRoutineManager
 
         private void Current_NotificationTapped(Plugin.LocalNotification.EventArgs.NotificationEventArgs e)
         {
-             MainPage = new NavigationPage(new Views.dependentDashboard());        
+            MainPage = new NavigationPage(new Views.Login());
         }
 
         private void Current_OnTokenRefresh(object source, FirebasePushNotificationTokenEventArgs e)
