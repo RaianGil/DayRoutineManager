@@ -19,7 +19,7 @@
            
                 <!--//body-->
                 <StackLayout HeightRequest="600" Background="#f5f5f5" Margin="0,0,0,0">
-
+                <StackLayout Orientation="Horizontal">
                 <Button Text="Agregar dependiente" 
                                x:Name="BtnAgregarDep" 
                                Clicked="BtnAgregarDep_Clicked" 
@@ -28,15 +28,17 @@
                                TextColor="White" 
                                CornerRadius="100" 
                                Background="#e5d3e8"/>
-               
+
                     <Button Text="Recordatorios" 
                                x:Name="BtnRecordatorios" 
                                Clicked="BtnRecordatorios_Clicked"
-                               HorizontalOptions="Start" 
+                               HorizontalOptions="FillAndExpand"
+                               Padding="-5"
                                Margin="14,12,14,0" 
                                TextColor="White" 
                                CornerRadius="100" 
                                Background="#e5d3e8"/>
+                </StackLayout>
                 <!--Reminders body-->
                 <ScrollView HeightRequest="600" Orientation="Vertical">
                     <StackLayout>
