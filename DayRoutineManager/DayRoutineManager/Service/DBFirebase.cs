@@ -4,6 +4,7 @@ using Firebase.Database.Query;
 using Plugin.DeviceInfo;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,42 @@ namespace DayRoutineManager.Service
             return (await client
                .Child("Dependiente")
                .OnceAsync<Dependiente>()).FirstOrDefault(a => a.Object.codigo_dependiente == CrossDeviceInfo.Current.Id);
+        }
+
+        public ObservableCollection<AdminDependiente> GetAdminDependientes()
+        {
+            var DependienteData = client
+                .Child("AdminDependiente")
+                .AsObservable<AdminDependiente>()
+                .AsObservableCollection();
+
+            return DependienteData;
+        }
+
+        public async Task UpdateDependiente(string Nombre_dependiente, string codigo_dependiente)
+        {
+            var updateDependiente = (await client
+                .Child("AdminDependiente")
+                .OnceAsync<AdminDependiente>()).FirstOrDefault
+                (a => a.Object.Nombre_dependiente == Nombre_dependiente);
+
+            AdminDependiente admindep = new AdminDependiente() 
+            { Nombre_dependiente = Nombre_dependiente, codigo_dependiente = codigo_dependiente };
+            await client
+                .Child("AdminDependiente")
+                .Child(updateDependiente.Key).PutAsync(admindep);
+
+        }
+
+        public async Task DeleteDependiente(string adminDependiente_id, string Nombre_dependiente, string codigo_dependiente)
+        {
+            var deleteDependiente = (await client
+                .Child("AdminDependiente")
+                .OnceAsync<AdminDependiente>()).FirstOrDefault
+                (a => a.Object.AdminDependiente_id == adminDependiente_id ||
+                a.Object.Nombre_dependiente == Nombre_dependiente ||
+                a.Object.codigo_dependiente == codigo_dependiente);
+            await client.Child("AdminDependiente").Child(deleteDependiente.Key).DeleteAsync();
         }
 
     }

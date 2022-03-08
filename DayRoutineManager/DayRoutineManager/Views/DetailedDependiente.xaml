@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DayRoutineManager.Views.DetailedDependiente">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Nombre_dependiente}"/>
+            <Entry x:Name="idDependiente" Text="{Binding AdminDependinete_id}"/>
+            <Entry x:Name="nombreDependiente" Text="{Binding Nombre_Dependiente}"/>
+            <Entry x:Name="codigoDependiente" Text="{Binding codigo_Dependiente}"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <StackLayout Orientation="Horizontal">
+        <Button x:Name="btnUpdate" Text="Actualizar" Clicked="btnUpdate_Clicked"/>
+
+        <Button x:Name="btnDelete" Text="Eliminar" Clicked="btnDelete_Clicked"/>
+    </StackLayout>
+</ContentPage>
