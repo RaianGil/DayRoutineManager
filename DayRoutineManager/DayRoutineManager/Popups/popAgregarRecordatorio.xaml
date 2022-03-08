@@ -8,10 +8,10 @@
             <Frame>
                 <Grid>
                     <StackLayout>
-                        <Label Text="Welcome to Prodo Phone" 
+                        <Label Text="Titulo Recordatorio" 
                            TextColor="Black"/>
                         <Entry x:Name="entTituloRecordatorio" />
-                        <Label Text="Welcome to Prodo Phone" 
+                        <Label Text="Descripcion" 
                            TextColor="Black"/>
                         <Editor x:Name="edDescripcionRecordatorio" />
                         <Label Text="Fecha/Hora"
@@ -19,7 +19,7 @@
                         <Entry x:Name="entHoraTarea"
                                TextColor="Black"/>
                         <Button x:Name="btnSend"
-                                Text="Prueba 70"
+                                Text="Crear Recordatorio"
                                 Clicked="btnSend_Clicked"/>
                     </StackLayout>
                 </Grid>

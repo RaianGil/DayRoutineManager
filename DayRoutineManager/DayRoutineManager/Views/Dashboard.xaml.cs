@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 using DayRoutineManager.TblModels;
 using Xamarin.Essentials;
+using DayRoutineManager.Models;
 
 namespace DayRoutineManager.Views
 {
@@ -19,6 +20,7 @@ namespace DayRoutineManager.Views
         {
             InitializeComponent();
             loadDependeiente();
+           // loadRecordatorio();
         }
 
         private void BtnAgregarDep_Clicked(object sender, EventArgs e)
@@ -50,6 +52,21 @@ namespace DayRoutineManager.Views
                 codigo_dependiente = AddRecordatorio.BindingContext.ToString()
             };
             PopupNavigation.Instance.PushAsync(popup);
+        }
+
+        private void loadRecordatorio()
+        {
+            var conn = Connection.LocalConn.get();
+            var listaRecordatorio = new ObservableCollection<Recordatorio>();
+            var getRecordatorio = conn.Query<Recordatorio>("Select * From Recordatorio");
+            foreach (var tarea in getRecordatorio)
+                listaRecordatorio.Add(tarea);
+            lvDashboard.ItemsSource = listaRecordatorio;
+        }
+
+        private void BtnRecordatorios_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

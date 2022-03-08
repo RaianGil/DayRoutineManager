@@ -29,7 +29,7 @@ namespace DayRoutineManager.Popups
             LocaladdDependiente();
             Codigotxt.Text = "";
             Nombretxt.Text = "";
-            addNotificationDependiente();
+            //addNotificationDependiente();
         }
 
         private void CloudaddDependiente()

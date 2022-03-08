@@ -10,13 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace DayRoutineManager.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class AddedRecordatorio : TabbedPage
     {
-      
-
-        public Login()
+        public AddedRecordatorio()
         {
-            InitializeComponent();        
+            InitializeComponent();
         }
     }
 }
