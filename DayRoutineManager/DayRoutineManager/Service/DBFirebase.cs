@@ -51,5 +51,16 @@ namespace DayRoutineManager.Service
                .OnceAsync<Dependiente>()).FirstOrDefault(a => a.Object.codigo_dependiente == CrossDeviceInfo.Current.Id);
         }
 
+
+        public async Task DeleteDependiente(string nombre, string codigo, string admindependiente_id)
+        {
+            var Clouddeletedependiente = (await client
+                .Child("DependienteAdmin").OnceAsync<AdminDependiente>()).
+                FirstOrDefault(a =>
+                a.Object.Nombre_dependiente == nombre || a.Object.codigo_dependiente == codigo || a.Object.AdminDependiente_id == admindependiente_id);
+
+            await client.Child("DependienteAdmin").Child(Clouddeletedependiente.Key).DeleteAsync();
+        }
+
     }
 }

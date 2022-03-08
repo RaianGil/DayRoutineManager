@@ -27,7 +27,9 @@
                     <StackLayout>
                         <ListView x:Name="lvRecordatorios" 
                                   RowHeight="180"
-                                  SelectionMode="Single">
+                                  SelectionMode="Single"
+                                  Grid.Row="3"
+                                  ItemsSource="{Binding RecordatorioModel}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -63,7 +65,7 @@
                                                            VerticalOptions="StartAndExpand"
                                                            HorizontalOptions="StartAndExpand" />
                                                     
-                                                    <Label Text="{Binding fecha_inicio_formated}" 
+                                                    <Label Text="{Binding fecha_fin_formated}" 
                                                            FontSize="16" 
                                                            TextColor="#000" 
                                                            HorizontalOptions="End" 

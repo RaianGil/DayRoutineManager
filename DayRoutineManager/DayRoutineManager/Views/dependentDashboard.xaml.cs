@@ -22,6 +22,7 @@ namespace DayRoutineManager.Views
             InitializeComponent();
             loadDependecies();
             CodigoDependiente.Text = CrossDeviceInfo.Current.Id;
+            BindingContext = new RecortadorioModel();
         }
         private void loadDependecies()
         {

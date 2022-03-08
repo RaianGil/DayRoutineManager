@@ -71,5 +71,10 @@ namespace DayRoutineManager.Popups
             };
              NotificationCenter.Current.Show(notification);
         }
+
+        private void ClouddeleteDependiente()
+        {
+            
+        }
      }
 }
