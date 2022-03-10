@@ -66,10 +66,10 @@ namespace DayRoutineManager.Service
         public async Task AddDependiente(string adminDependiente_id, string Nombre_dependiente, string codigo_dependiente)
         {
             DependienteModel dependiente = new DependienteModel()
-              { AdminDependiente_id = adminDependiente_id,
+               {AdminDependiente_id = adminDependiente_id,
                 Nombre_dependiente = Nombre_dependiente,
                 codigo_dependiente = codigo_dependiente};
-                 await client
+                await client
                 .Child("AdminDependiente")
                 .PostAsync(dependiente);
         }
