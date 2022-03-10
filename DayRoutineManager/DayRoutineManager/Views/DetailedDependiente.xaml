@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:tblmodels="clr-namespace:DayRoutineManager.TblModels" x:DataType="tblmodels:AdminDependiente"
              x:Class="DayRoutineManager.Views.DetailedDependiente">
 
     <ContentPage.Content>
         <StackLayout>
+            
             <Label Text="{Binding Nombre_dependiente}"/>
             <Entry x:Name="idDependiente" Placeholder="{Binding AdminDependiente_id}" Text="{Binding AdminDependinete_id}"/>
             <Entry x:Name="nombreDependiente" Placeholder="{Binding Nombre_dependiente}" Text="{Binding Nombre_dependiente}"/>

@@ -78,7 +78,7 @@ namespace DayRoutineManager.Service
         {
             var updateDependiente = (await client
                 .Child("AdminDependiente")
-                .OnceAsync<AdminDependiente>()).FirstOrDefault
+                .OnceAsync<DependienteModel>()).FirstOrDefault
                 (a => a.Object.Nombre_dependiente == Nombre_dependiente);
 
             AdminDependiente admindep = new AdminDependiente() 
@@ -93,7 +93,7 @@ namespace DayRoutineManager.Service
         {
             var deleteDependiente = (await client
                 .Child("AdminDependiente")
-                .OnceAsync<AdminDependiente>()).FirstOrDefault
+                .OnceAsync<DependienteModel>()).FirstOrDefault
                 (a => a.Object.AdminDependiente_id == adminDependiente_id ||
                 a.Object.Nombre_dependiente == Nombre_dependiente ||
                 a.Object.codigo_dependiente == codigo_dependiente);

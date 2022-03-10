@@ -1,8 +1,10 @@
-﻿using DayRoutineManager.Service;
+﻿using DayRoutineManager.Models;
+using DayRoutineManager.Service;
 using DayRoutineManager.TblModels;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace DayRoutineManager.Views
 {
@@ -10,10 +12,11 @@ namespace DayRoutineManager.Views
     public partial class DetailedDependiente : ContentPage
     {
         DBFirebase services;
+        DependienteModel dependiente = new DependienteModel();
         public DetailedDependiente()
         {
             InitializeComponent();
-            BindingContext = new AdminDependiente();
+            BindingContext = dependiente;
             services = new DBFirebase();
                 
         }

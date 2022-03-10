@@ -19,9 +19,9 @@ namespace DayRoutineManager.Views
             InitializeComponent();        
         }
 
-        private void btnDepediente_Clicked(object sender, EventArgs e)
+        private async void btnDepediente_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new Dashboard());
+            await Navigation.PushAsync(new Dashboard());
         }
     }
 }
