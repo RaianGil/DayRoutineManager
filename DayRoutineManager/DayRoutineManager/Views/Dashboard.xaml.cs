@@ -19,7 +19,7 @@ namespace DayRoutineManager.Views
         public Dashboard()
         {
             InitializeComponent();
-            loadDependeiente();
+            //loadDependeiente();
             // loadRecordatorio();
             BindingContext = new AdminDependiente();
         }

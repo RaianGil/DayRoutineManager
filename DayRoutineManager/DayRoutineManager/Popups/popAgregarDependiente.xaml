@@ -11,15 +11,19 @@
                         <Label Text="Agregar Dependiente" 
                                TextColor="Black" />
                         
-                        <Entry x:Name="Nombretxt" 
+                        <Entry x:Name="Nombretxt"
+                               Text="{Binding Nombre_dependiente}"
                                Placeholder="Nombre" 
                                TextColor="Black"/>
                         
                         <Entry x:Name="Codigotxt"
+                               Text="{Binding codigo_dependiente}"
                                Placeholder="Codigo"
                                TextColor="Black"/>
 
-                    <Button x:Name="BtnAgregar" Clicked="BtnAgregar_Clicked"/>
+                        <Button x:Name="BtnAgregar" 
+                                Clicked="BtnAgregar_Clicked" 
+                                Command="{Binding AddDependiente}"/>
                     </StackLayout>
                 </Grid>              
             </Frame>

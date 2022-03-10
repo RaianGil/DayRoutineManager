@@ -21,24 +21,26 @@ namespace DayRoutineManager.Popups
         public popAgregarDependiente()
         {
             InitializeComponent();
+            BindingContext = new AdminDependiente();
         }
 
         private void BtnAgregar_Clicked(object sender, EventArgs e)
         {
-            CloudaddDependiente();
-            LocaladdDependiente();
+              CloudaddDependiente();
+           // LocaladdDependiente();
             Codigotxt.Text = "";
             Nombretxt.Text = "";
             //addNotificationDependiente();
+           
         }
 
         private void CloudaddDependiente()
         {
             firebaseClient.Child("DependienteAdmin").PostAsync(new AdminDependiente
             {
-                AdminDependiente_id = Guid.NewGuid().ToString(),
-                codigo_dependiente = Codigotxt.Text,
-                Nombre_dependiente = Nombretxt.Text
+                AdminDependiente_id = Guid.NewGuid().ToString()
+                //codigo_dependiente = Codigotxt.Text,
+              //  Nombre_dependiente = Nombretxt.Text
             });
 
         }

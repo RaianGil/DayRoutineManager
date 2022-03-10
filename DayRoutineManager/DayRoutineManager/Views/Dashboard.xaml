@@ -45,7 +45,7 @@
                         <ListView x:Name="lvDashboard"
                                RowHeight="180"
                                SelectionMode="Single"
-                               ItemsSource="{Binding AdminDpendiente}"
+                               ItemsSource="{Binding AdminDependiente}"
                                ItemTapped="lvDashboard_ItemTapped"                                  
                                   >
                             <ListView.ItemTemplate>
