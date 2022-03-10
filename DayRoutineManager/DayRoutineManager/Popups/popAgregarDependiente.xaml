@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             x:Class="DayRoutineManager.Popups.popAgregarDependiente">
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:tblmodels="clr-namespace:DayRoutineManager.TblModels" x:DataType="tblmodels:AdminDependiente"
+                 x:Class="DayRoutineManager.Popups.popAgregarDependiente">
+   
     <ContentPage.Content>
         <StackLayout  VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
             <Frame Background="#f5f5f5">
@@ -23,7 +24,7 @@
 
                         <Button x:Name="BtnAgregar" 
                                 Clicked="BtnAgregar_Clicked" 
-                                Command="{Binding AddDependiente}"/>
+                                Command="{Binding AddDependienteCommand}"
                     </StackLayout>
                 </Grid>              
             </Frame>

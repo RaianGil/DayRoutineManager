@@ -3,19 +3,14 @@ using DayRoutineManager.TblModels;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Plugin.LocalNotification;
+using Rg.Plugins.Popup.Pages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace DayRoutineManager.Popups
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class popAgregarDependiente
+    public partial class popAgregarDependiente : PopupPage
     {      
         FirebaseClient firebaseClient = new FirebaseClient("https://dailyroutinemanager-36ce7-default-rtdb.firebaseio.com/");
         public popAgregarDependiente()
@@ -26,7 +21,7 @@ namespace DayRoutineManager.Popups
 
         private void BtnAgregar_Clicked(object sender, EventArgs e)
         {
-              CloudaddDependiente();
+            CloudaddDependiente();
            // LocaladdDependiente();
             Codigotxt.Text = "";
             Nombretxt.Text = "";
