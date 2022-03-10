@@ -45,7 +45,7 @@
                         <ListView x:Name="lvDashboard"
                                RowHeight="180"
                                SelectionMode="Single"
-                               ItemsSource="{Binding AdminDependiente}"
+                               ItemsSource="{Binding DependienteModel}"
                                ItemTapped="lvDashboard_ItemTapped"                                  
                                   >
                             <ListView.ItemTemplate>
@@ -77,7 +77,7 @@
                                                         Background="#e5d3e8"
                                                         Text="Agregar Recordatorio"
                                                         TextColor="White"
-                                                        BindingContext="{Binding codigo_dependiente}"
+                                                        BindingContext="{}"
                                                         Clicked="btnAddRecordatorio_Clicked"/>
                                             </StackLayout>
                                         </Frame>
