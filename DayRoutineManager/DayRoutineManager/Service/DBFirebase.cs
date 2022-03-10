@@ -1,4 +1,5 @@
-﻿using DayRoutineManager.TblModels;
+﻿using DayRoutineManager.Models;
+using DayRoutineManager.TblModels;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Plugin.DeviceInfo;
@@ -52,14 +53,25 @@ namespace DayRoutineManager.Service
                .OnceAsync<Dependiente>()).FirstOrDefault(a => a.Object.codigo_dependiente == CrossDeviceInfo.Current.Id);
         }
 
-        public ObservableCollection<AdminDependiente> GetAdminDependientes()
+        public ObservableCollection<DependienteModel> GetAdminDependientes()
         {
             var DependienteData = client
                 .Child("AdminDependiente")
-                .AsObservable<AdminDependiente>()
+                .AsObservable<DependienteModel>()
                 .AsObservableCollection();
 
             return DependienteData;
+        }
+
+        public async Task AddDependiente(string adminDependiente_id, string Nombre_dependiente, string codigo_dependiente)
+        {
+            DependienteModel dependiente = new DependienteModel()
+              { AdminDependiente_id = adminDependiente_id,
+                Nombre_dependiente = Nombre_dependiente,
+                codigo_dependiente = codigo_dependiente};
+                 await client
+                .Child("AdminDependiente")
+                .PostAsync(dependiente);
         }
 
         public async Task UpdateDependiente(string Nombre_dependiente, string codigo_dependiente)
