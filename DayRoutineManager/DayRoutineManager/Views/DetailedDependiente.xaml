@@ -6,15 +6,12 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Nombre_dependiente}"/>
-            <Entry x:Name="idDependiente" Text="{Binding AdminDependinete_id}"/>
-            <Entry x:Name="nombreDependiente" Text="{Binding Nombre_Dependiente}"/>
-            <Entry x:Name="codigoDependiente" Text="{Binding codigo_Dependiente}"/>
+            <Entry x:Name="idDependiente" Placeholder="{Binding AdminDependiente_id}" Text="{Binding AdminDependinete_id}"/>
+            <Entry x:Name="nombreDependiente" Placeholder="{Binding Nombre_dependiente}" Text="{Binding Nombre_dependiente}"/>
+            <Entry x:Name="codigoDependiente" Placeholder="{Binding codigo_Dependinete}" Text="{Binding codigo_Dependiente}"/>
+
+            <Button x:Name="btnUpdate" Text="Actualizar" Clicked="btnUpdate_Clicked"/>
+            <Button x:Name="btnDelete" Text="Eliminar" Clicked="btnDelete_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
-
-    <StackLayout Orientation="Horizontal">
-        <Button x:Name="btnUpdate" Text="Actualizar" Clicked="btnUpdate_Clicked"/>
-
-        <Button x:Name="btnDelete" Text="Eliminar" Clicked="btnDelete_Clicked"/>
-    </StackLayout>
 </ContentPage>

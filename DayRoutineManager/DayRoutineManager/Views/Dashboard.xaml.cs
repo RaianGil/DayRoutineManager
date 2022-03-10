@@ -72,8 +72,8 @@ namespace DayRoutineManager.Views
 
         public async void lvDashboard_ItemTapped(object sender, ItemTappedEventArgs args)
         {
-            var detailDependiente = args.Item as Dependiente;
-            if (detailDependiente == null) return;
+           /* var detailDependiente = args.Item as Dependiente;
+            if (detailDependiente == null) return;*/
 
             await Navigation.PushAsync(new DetailedDependiente());
             lvDashboard.SelectedItem = null;

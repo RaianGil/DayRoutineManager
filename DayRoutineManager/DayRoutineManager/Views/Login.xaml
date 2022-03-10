@@ -15,7 +15,7 @@
                     TextColor="#5d3569" FontSize="50" FontFamily="Arial" VerticalTextAlignment="Center"   />
 
             <Button
-                Text="Administrador"                
+                Text="Recodatorios"                
                 BorderColor="#feb7c7"
                 BorderWidth="1.5"
                 CornerRadius="15"
@@ -24,7 +24,9 @@
 
 
             <Button Text="Dependiente"
+                    x:Name="btnDepediente"
                     BorderColor="#dfcff4"
+                    Clicked="btnDepediente_Clicked"
                     BorderWidth="1.5"
                     CornerRadius="15"
                     TextColor="#fff" Margin="10,0" Background="#dfcff4"
