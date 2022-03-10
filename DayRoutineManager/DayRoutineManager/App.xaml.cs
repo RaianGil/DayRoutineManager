@@ -14,10 +14,10 @@ namespace DayRoutineManager
         {
             InitializeComponent();
             var conn = Connection.LocalConn.get();
-            conn.CreateTable<TblModels.Dependiente>();
+           /* conn.CreateTable<TblModels.Dependiente>();
             conn.CreateTable<TblModels.Recordatorio>();
-            conn.CreateTable<TblModels.AdminDependiente>();
-            MainPage = new NavigationPage(new Views.Login());
+            conn.CreateTable<TblModels.AdminDependiente>();*/
+            MainPage = new NavigationPage(new Views.Dashboard());
             CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
             NotificationCenter.Current.NotificationTapped += Current_NotificationTapped;
         }
