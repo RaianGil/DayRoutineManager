@@ -45,6 +45,7 @@
                         <ListView x:Name="lvDashboard"
                                RowHeight="180"
                                SelectionMode="Single"
+                               Grid.Row="1"
                                ItemsSource="{Binding Dependientes}"
                                ItemTapped="lvDashboard_ItemTapped"                                  
                                   >

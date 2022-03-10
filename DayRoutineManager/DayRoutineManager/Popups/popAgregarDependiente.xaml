@@ -24,7 +24,7 @@
 
                         <Button x:Name="BtnAgregar" 
                                 Clicked="BtnAgregar_Clicked" 
-                                Command="{Binding AddDependienteCommand}"
+                                Command="{Binding AddDependienteCommand}"/>
                     </StackLayout>
                 </Grid>              
             </Frame>
