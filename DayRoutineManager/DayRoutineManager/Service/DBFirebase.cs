@@ -81,11 +81,12 @@ namespace DayRoutineManager.Service
                 .OnceAsync<DependienteModel>()).FirstOrDefault
                 (a => a.Object.Nombre_dependiente == Nombre_dependiente);
 
-            AdminDependiente admindep = new AdminDependiente() 
+            DependienteModel admindep = new DependienteModel()
             { Nombre_dependiente = Nombre_dependiente, codigo_dependiente = codigo_dependiente };
             await client
                 .Child("AdminDependiente")
-                .Child(updateDependiente.Key).PutAsync(admindep);
+                .Child(updateDependiente.Key)
+                .PutAsync(admindep);
 
         }
 

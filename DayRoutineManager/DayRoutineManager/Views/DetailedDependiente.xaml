@@ -7,7 +7,7 @@
         <StackLayout>
             
             <Label Text="{Binding Nombre_dependiente}"/>
-            <Entry x:Name="idDependiente" Placeholder="{Binding AdminDependiente_id}" Text="{Binding AdminDependinete_id}"/>
+            <Entry x:Name="idDependiente" Placeholder="{Binding AdminDependiente_id}" Text="{Binding AdminDependiente_id}"/>
             <Entry x:Name="nombreDependiente" Placeholder="{Binding Nombre_dependiente}" Text="{Binding Nombre_dependiente}"/>
             <Entry x:Name="codigoDependiente" Placeholder="{Binding codigo_Dependinete}" Text="{Binding codigo_Dependiente}"/>
 
