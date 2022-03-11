@@ -46,7 +46,7 @@
                                RowHeight="180"
                                SelectionMode="Single"
                                Grid.Row="1"
-                               ItemsSource="{Binding Dependientes}"
+                               ItemsSource="{Binding dependientes}"
                                ItemTapped="lvDashboard_ItemTapped"                                  
                                   >
                             <ListView.ItemTemplate>

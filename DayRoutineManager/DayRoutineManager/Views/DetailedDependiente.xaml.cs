@@ -12,8 +12,7 @@ namespace DayRoutineManager.Views
     public partial class DetailedDependiente : ContentPage
     {
         DBFirebase services;
-        AdminDependiente dependiente = new AdminDependiente();
-        public DetailedDependiente()
+        public DetailedDependiente(DependienteModel dependiente)
         {
             InitializeComponent();
             BindingContext = dependiente;

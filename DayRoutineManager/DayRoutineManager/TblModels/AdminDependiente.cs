@@ -2,18 +2,14 @@
 using DayRoutineManager.Service;
 using MvvmHelpers;
 using MvvmHelpers.Commands;
-using SQLite;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DayRoutineManager.TblModels
 {
-    class AdminDependiente : BaseViewModel /*Models.DependienteModel*/
-    {
-        //[PrimaryKey]
+  public  class AdminDependiente : BaseViewModel /*Models.DependienteModel*/
+  {
+         //[PrimaryKey]
         public string AdminDependiente_id { get; set; }
         public string Nombre_dependiente { get; set; }
         public string codigo_dependiente {get ; set;}
@@ -23,7 +19,7 @@ namespace DayRoutineManager.TblModels
         public Command AddDependienteCommand { get; }
 
         private ObservableCollection<DependienteModel> _Dependiente = new ObservableCollection<DependienteModel>();
-        public ObservableCollection<DependienteModel> Dependientes
+        public ObservableCollection<DependienteModel> dependientes
         {
             get { return _Dependiente; }
             set
@@ -36,7 +32,7 @@ namespace DayRoutineManager.TblModels
         public AdminDependiente()
         {
             services = new DBFirebase();
-            Dependientes = services.GetAdminDependientes();
+            dependientes = services.GetAdminDependientes();
             AddDependienteCommand = new Command(async () => await
             AddDependienteAsync(AdminDependiente_id, Nombre_dependiente, codigo_dependiente));
         }

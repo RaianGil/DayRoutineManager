@@ -19,7 +19,7 @@ namespace DayRoutineManager.Views
         public Dashboard()
         {
             InitializeComponent();
-            //loadDependeiente();
+            //loadDependeiente();zz
             // loadRecordatorio();
             BindingContext = new AdminDependiente();
         }
@@ -75,7 +75,7 @@ namespace DayRoutineManager.Views
             var detailDependiente = args.Item as DependienteModel;
             if (detailDependiente == null) return;
 
-            await Navigation.PushAsync(new DetailedDependiente());
+            await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
             lvDashboard.SelectedItem = null;
         }
 
