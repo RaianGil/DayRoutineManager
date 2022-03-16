@@ -10,18 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace DayRoutineManager.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class Register : ContentPage
     {
-      
-
-        public Login()
+        public Register()
         {
-            InitializeComponent();        
-        }
-
-        private async void btnDepediente_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Dashboard());
+            InitializeComponent();
         }
     }
 }

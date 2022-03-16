@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:tblmodels="clr-namespace:DayRoutineManager.TblModels" x:DataType="tblmodels:AdminDependiente"
              x:Class="DayRoutineManager.Views.Dashboard"
-             Background="#f5f5f5" >
+              Background="#f5f5f5">
     <ContentPage.Content>
        
         <StackLayout >
@@ -29,7 +29,7 @@
                                CornerRadius="100" 
                                Background="#e5d3e8"/>
 
-                    <Button Text="Recordatorios" 
+                    <!--<Button Text="Recordatorios" 
                                x:Name="BtnRecordatorios" 
                                Clicked="BtnRecordatorios_Clicked"
                                HorizontalOptions="FillAndExpand"
@@ -37,7 +37,7 @@
                                Margin="14,12,14,0" 
                                TextColor="White" 
                                CornerRadius="100" 
-                               Background="#e5d3e8"/>
+                               Background="#e5d3e8"/>-->
                 </StackLayout>
                 <!--Reminders body-->
                 <ScrollView HeightRequest="600" Orientation="Vertical">
@@ -62,7 +62,7 @@
                                                              Margin="0"  
                                                              HeightRequest="40"
                                                              VerticalOptions="StartAndExpand">
-
+                                                    
                                                     <Label Text="{Binding Nombre_dependiente}"
                                                            FontSize="20" 
                                                            TextColor="White" 

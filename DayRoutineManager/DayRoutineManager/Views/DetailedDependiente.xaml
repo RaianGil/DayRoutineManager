@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:tblmodels="clr-namespace:DayRoutineManager.TblModels" x:DataType="tblmodels:AdminDependiente"
-             x:Class="DayRoutineManager.Views.DetailedDependiente">
+             x:Class="DayRoutineManager.Views.DetailedDependiente"
+             Background="#f5f5f5">
 
     <ContentPage.Content>
-        <StackLayout>
-            
-            <Label Text="{Binding Nombre_dependiente}"/>
-            <Entry x:Name="idDependiente" Placeholder="{Binding AdminDependiente_id}" Text="{Binding AdminDependiente_id}"/>
+        <Frame  Margin="20,80,20,80"  CornerRadius="6"  >
+            <StackLayout Padding="10,20,10,0"    >
+
+              <Label Text="Actualiza o elimina " HorizontalOptions="Center" TextColor="Black"  FontSize="Large"/>
+              <!--<Label Text="{Binding Nombre_dependiente}"/>-->
+
+                <Entry x:Name="idDependiente" Placeholder="{Binding AdminDependiente_id}" Text="{Binding AdminDependiente_id}"/>
             <Entry x:Name="nombreDependiente" Placeholder="{Binding Nombre_dependiente}" Text="{Binding Nombre_dependiente}"/>
             <Entry x:Name="codigoDependiente" Placeholder="{Binding codigo_dependiente}" Text="{Binding codigo_dependiente}"/>
 
-            <Button x:Name="btnUpdate" Text="Actualizar" Clicked="btnUpdate_Clicked"/>
-            <Button x:Name="btnDelete" Text="Eliminar" Clicked="btnDelete_Clicked"/>
+                <Button x:Name="btnUpdate" Text="Actualizar" Margin="0,30,0,10" Background="#039be5" TextColor="White" FontAttributes="Bold" Clicked="btnUpdate_Clicked"/>
+                <Button x:Name="btnDelete" Text="Eliminar" Background="#f44336" TextColor="White" FontAttributes="Bold" Clicked="btnDelete_Clicked"/>
+            
         </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

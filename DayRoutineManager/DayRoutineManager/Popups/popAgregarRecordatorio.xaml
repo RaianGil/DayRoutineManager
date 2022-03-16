@@ -5,21 +5,30 @@
              x:Class="DayRoutineManager.Popups.popAgregarRecordatorio">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-            <Frame>
+            <Frame Margin="22,0,22,0" CornerRadius="5">
                 <Grid>
                     <StackLayout>
                         <Label Text="Titulo Recordatorio" 
-                           TextColor="Black"/>
-                        <Entry x:Name="entTituloRecordatorio" />
+                           TextColor="Black" 
+                               FontSize="Medium"
+                               
+                               />
+                        <Entry x:Name="entTituloRecordatorio" Placeholder="Nombre recordatorio" />
                         <Label Text="Descripcion" 
+                               FontSize="Medium"
                            TextColor="Black"/>
-                        <Editor x:Name="edDescripcionRecordatorio" />
+                        <Editor x:Name="edDescripcionRecordatorio" Placeholder="Describcion" />
                         <Label Text="Fecha/Hora"
+                               FontSize="Medium"
                                TextColor="Black"/>
                         <Entry x:Name="entHoraTarea"
                                TextColor="Black"/>
                         <Button x:Name="btnSend"
                                 Text="Crear Recordatorio"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="5"
+                                Background="#039be5"
                                 Clicked="btnSend_Clicked"/>
                     </StackLayout>
                 </Grid>
