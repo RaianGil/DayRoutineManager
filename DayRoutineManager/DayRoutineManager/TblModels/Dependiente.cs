@@ -5,7 +5,7 @@ using SQLite;
 
 namespace DayRoutineManager.TblModels
 {
-    class Dependiente: Models.DependienteModel
+   public class Dependiente: Models.DependienteModel
     {
     }
 }

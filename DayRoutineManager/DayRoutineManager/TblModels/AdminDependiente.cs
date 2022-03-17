@@ -25,7 +25,7 @@ namespace DayRoutineManager.TblModels
             set
             {
                 _Dependiente = value;
-                 OnPropertyChanged();
+                OnPropertyChanged(nameof(dependientes));
             }
         }
 

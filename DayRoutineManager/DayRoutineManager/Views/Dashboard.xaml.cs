@@ -65,10 +65,6 @@ namespace DayRoutineManager.Views
             lvDashboard.ItemsSource = listaRecordatorio;
         }
 
-        private void BtnRecordatorios_Clicked(object sender, EventArgs e)
-        {
-
-        }
 
         public async void lvDashboard_ItemTapped(object sender, ItemTappedEventArgs args)
         {
@@ -78,6 +74,6 @@ namespace DayRoutineManager.Views
             await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
             lvDashboard.SelectedItem = null;
         }
-
+    
     }
 }

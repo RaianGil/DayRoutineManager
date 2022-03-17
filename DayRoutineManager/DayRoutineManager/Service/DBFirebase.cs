@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DayRoutineManager.Service
 {
-    class DBFirebase
+   public class DBFirebase
     {
         FirebaseClient client;
         public DBFirebase()
@@ -36,7 +36,7 @@ namespace DayRoutineManager.Service
             };
             await client
                 .Child("Dependiente")
-                .PostAsync(sendDependiente);
+                .PostAsync(sendDependiente);  
         }
         public async void update(string token, FirebaseObject<Dependiente> inPrue)
         {
@@ -73,8 +73,8 @@ namespace DayRoutineManager.Service
                 .Child("AdminDependiente")
                 .PostAsync(dependiente);
         }
-
-        public async Task UpdateDependiente(string Nombre_dependiente, string codigo_dependiente)
+        /*agregar el id al update*/
+        public async Task UpdateDependiente(string Nombre_dependiente, string codigo_dependiente, string adminDependiente_id)
         {
             var updateDependiente = (await client
                 .Child("AdminDependiente")
@@ -82,7 +82,7 @@ namespace DayRoutineManager.Service
                 (a => a.Object.Nombre_dependiente == Nombre_dependiente);
 
             DependienteModel admindep = new DependienteModel()
-            { Nombre_dependiente = Nombre_dependiente, codigo_dependiente = codigo_dependiente };
+            { Nombre_dependiente = Nombre_dependiente, codigo_dependiente = codigo_dependiente, AdminDependiente_id = adminDependiente_id };
             await client
                 .Child("AdminDependiente")
                 .Child(updateDependiente.Key)

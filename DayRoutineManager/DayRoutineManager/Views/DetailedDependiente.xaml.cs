@@ -17,12 +17,11 @@ namespace DayRoutineManager.Views
             InitializeComponent();
             BindingContext = dependiente;
             services = new DBFirebase();
-                
         }
 
         private async void btnUpdate_Clicked(object sender, EventArgs e)
         {
-            await services.UpdateDependiente(nombreDependiente.Text, codigoDependiente.Text);
+            await services.UpdateDependiente(nombreDependiente.Text, codigoDependiente.Text, idDependiente.Text);
             await Navigation.PushAsync(new Dashboard());
         }
 
