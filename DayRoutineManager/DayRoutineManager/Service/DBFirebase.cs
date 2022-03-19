@@ -36,7 +36,7 @@ namespace DayRoutineManager.Service
             };
             await client
                 .Child("Dependiente")
-                .PostAsync(sendDependiente);  
+                .PostAsync(sendDependiente);
         }
         public async void update(string token, FirebaseObject<Dependiente> inPrue)
         {
@@ -79,7 +79,9 @@ namespace DayRoutineManager.Service
             var updateDependiente = (await client
                 .Child("AdminDependiente")
                 .OnceAsync<DependienteModel>()).FirstOrDefault
-                (a => a.Object.Nombre_dependiente == Nombre_dependiente);
+                (a => a.Object.AdminDependiente_id == adminDependiente_id ||
+                a.Object.Nombre_dependiente == Nombre_dependiente ||
+                a.Object.codigo_dependiente == codigo_dependiente);
 
             DependienteModel admindep = new DependienteModel()
             { Nombre_dependiente = Nombre_dependiente, codigo_dependiente = codigo_dependiente, AdminDependiente_id = adminDependiente_id };
@@ -87,7 +89,6 @@ namespace DayRoutineManager.Service
                 .Child("AdminDependiente")
                 .Child(updateDependiente.Key)
                 .PutAsync(admindep);
-
         }
 
         public async Task DeleteDependiente(string adminDependiente_id, string Nombre_dependiente, string codigo_dependiente)

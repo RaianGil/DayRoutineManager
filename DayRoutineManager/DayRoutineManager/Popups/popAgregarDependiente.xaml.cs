@@ -14,7 +14,6 @@ namespace DayRoutineManager.Popups
     public partial class popAgregarDependiente : PopupPage
     {      
         FirebaseClient firebaseClient = new FirebaseClient("https://dailyroutinemanager-36ce7-default-rtdb.firebaseio.com/");
-        DBFirebase services;
         public popAgregarDependiente()
         {
             InitializeComponent();

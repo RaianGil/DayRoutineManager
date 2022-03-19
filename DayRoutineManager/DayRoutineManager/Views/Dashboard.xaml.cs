@@ -34,7 +34,7 @@ namespace DayRoutineManager.Views
             PopupNavigation.Instance.PushAsync(popup);
         }
 
-        private void loadDependeiente()
+       /* private void loadDependeiente()
         {
             var conn = Connection.LocalConn.get();
             var listaDependiente = new ObservableCollection<AdminDependiente>();
@@ -42,7 +42,7 @@ namespace DayRoutineManager.Views
             foreach (var tarea in getDependiente)
                 listaDependiente.Add(tarea);
             lvDashboard.ItemsSource = listaDependiente;
-        }
+        }*/
 
         private void btnAddRecordatorio_Clicked(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace DayRoutineManager.Views
             PopupNavigation.Instance.PushAsync(popup);
         }
 
-        private void loadRecordatorio()
+       /* private void loadRecordatorio()
         {
             var conn = Connection.LocalConn.get();
             var listaRecordatorio = new ObservableCollection<Recordatorio>();
@@ -63,17 +63,25 @@ namespace DayRoutineManager.Views
             foreach (var tarea in getRecordatorio)
                 listaRecordatorio.Add(tarea);
             lvDashboard.ItemsSource = listaRecordatorio;
-        }
+        }*/
 
 
-        public async void lvDashboard_ItemTapped(object sender, ItemTappedEventArgs args)
+       /* public async void lvDashboard_ItemTapped(object sender, ItemTappedEventArgs args)
         {
             var detailDependiente = args.Item as DependienteModel;
             if (detailDependiente == null) return;
 
             await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
             lvDashboard.SelectedItem = null;
-        }
-    
+        }*/
+
+        public async void OnItemSelected(object sender, ItemTappedEventArgs args)
+        {
+            var detailDependiente = args.Item as DependienteModel;
+            if (detailDependiente == null) return;
+
+            await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
+            lvDashboard.SelectedItem = null;
+        }   
     }
 }

@@ -40,14 +40,16 @@
                 </StackLayout>
                 <!--Reminders body-->
                 <ScrollView HeightRequest="600" Orientation="Vertical">
-                        <ListView x:Name="lvDashboard"
+                    <ListView x:Name="lvDashboard"
                                Grid.Row="1"
                                Grid.Column="1"
                                Grid.ColumnSpan="1"
                                ItemsSource="{Binding dependientes}"
                                RowHeight="180"
                                SelectionMode="Single"
-                               ItemTapped="lvDashboard_ItemTapped">
+                               ItemTapped="OnItemSelected">
+                        <!--="lvDashboard_ItemTapped"-->
+                               
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell Height="20">
