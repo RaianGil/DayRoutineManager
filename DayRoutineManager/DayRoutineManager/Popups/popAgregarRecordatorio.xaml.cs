@@ -31,14 +31,11 @@ namespace DayRoutineManager.Popups
             firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
             {
                 id_recordatorio = Guid.NewGuid().ToString(),
-                titulo_recordatorio = entTituloRecordatorio.Text,
-                descripcion_recordatorio = edDescripcionRecordatorio.Text,
-                codigo_dependiente = codigo_dependiente,
-                fecha_inicio = DateTime.Parse(entHoraTarea.Text)
+                Titulo_recordatorio = entTituloRecordatorio.Text,
+                Descripcion_recordatorio = edDescripcionRecordatorio.Text,
+                Fecha_inicio = DateTime.Parse(entHoraTarea.Text)
             });
             addNotificationDependiente();
-
-
 
             /* Console.WriteLine(codigo_dependiente);
              var conn = Connection.LocalConn.get();

@@ -16,5 +16,15 @@ namespace DayRoutineManager.Views
         {
             InitializeComponent();
         }
+
+        public async void btnRecordatorio_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Recordatorios());
+        }
+
+        public async void btnIniciar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Dashboard());
+        }
     }
 }

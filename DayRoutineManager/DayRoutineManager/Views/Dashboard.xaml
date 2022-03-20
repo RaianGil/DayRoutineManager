@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout >
             <!--Header-->
-                   <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#e5d3e8">
+                       <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#6E268B">
                        <Image Source="LogoCompletoSinFondo" WidthRequest="60"  Margin="10,0,0,0"></Image>
                        <Label Text="Administrador"
                        Padding="20,24,0,0"
@@ -58,7 +58,7 @@
                                                Margin="14,6,14,10" 
                                                Padding="0">
                                             <StackLayout HeightRequest="180">
-                                                <StackLayout Background="#feb7c7" 
+                                            <StackLayout Background="#6E268B" 
                                                              Orientation="Vertical" 
                                                              Margin="0"  
                                                              HeightRequest="40"
@@ -66,7 +66,15 @@
 
                                                 <Label Text="{Binding Nombre_dependiente}"
                                                            FontSize="20"
+                                                           Grid.Column="0"
                                                            TextColor="White"
+                                                           HorizontalOptions="StartAndExpand"
+                                                           HorizontalTextAlignment="Start"
+                                                           />
+                                                <Label Text="{Binding codigo_dependiente}"
+                                                           FontSize="20"
+                                                           Grid.Column="1"
+                                                           TextColor="#e5d3e8"
                                                            HorizontalOptions="StartAndExpand"
                                                            HorizontalTextAlignment="Start"
                                                            />

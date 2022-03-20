@@ -1,36 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DayRoutineManager.Views.Register">
+             x:Class="DayRoutineManager.Views.Register"
+             Background="#f5f5f5">
     <ContentPage.Content>
         <StackLayout Margin="5,0,5,0"   VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
             <Grid  >
                 <Image Source="LogoCompletoSinFondo"  />
             </Grid>
-            <StackLayout Margin="0,0,0,60">
-                <Label Text="Registrarse"                     
-                    VerticalOptions="Start"
-                   HorizontalOptions="Center"
-                    TextColor="#A15CB2" FontSize="30" FontFamily="Arial" VerticalTextAlignment="Center" FontAttributes="Bold"   />
-
-                <Entry Text="Nombre"  
-                       TextColor="Gray"
-                      Margin="40,40,40,10"                        
-                       />
-
-                <Entry Text="Contrasena"  
-                       TextColor="Gray"
-                         Margin="40,0,40,30"                    
-                       />
-
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
                 <Button
-                Text="Unirse"                
-                BorderColor="#FC84D0"
+                Text="Iniciar"         
+                x:Name="btnIniciar"
+                BorderColor="#CD7EF5"
                 BorderWidth="1.5"
-                CornerRadius="6"                
-                VerticalOptions="EndAndExpand"    
-                TextColor="White" Margin="94,0,94,0" FontAttributes="Bold" Background="#FC84D0" />
-
+                CornerRadius="10"
+                VerticalOptions="EndAndExpand"
+                Clicked="btnIniciar_Clicked"
+                TextColor="White" Margin="14,12,14,0" FontAttributes="Bold" Background="#6E268B" />
+                
+                <Button
+                Text="Recordatorios"
+                x:Name="btnRecordatorio"
+                BorderColor="#6E268B"
+                BorderWidth="1.5"
+                CornerRadius="10"
+                VerticalOptions="EndAndExpand"
+                Clicked="btnRecordatorio_Clicked"
+                TextColor="White" Margin="14,12,14,0" FontAttributes="Bold" Background="#e5d3e8" />
             </StackLayout>
 
         </StackLayout>

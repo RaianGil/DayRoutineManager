@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DayRoutineManager.Views.Recordatorios">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Header-->
+            <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#6E268B">
+                <Button
+                    x:Name="btnBack"
+                    Grid.Column="0"
+                    WidthRequest="50"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="26"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    HeightRequest="50"
+                    Text="&#10094;"
+                    Clicked="btnBack_Clicked">
+                </Button>
+                
+                <Label Text="Recordatorios"
+                       Grid.Column="1"
+                       Padding="20,24,0,0"
+                       FontSize="Medium"
+                       TextColor="White"
+                        />
+            </StackLayout>
+            <!--Header-->
+
+            <StackLayout HeightRequest="600" Background="#f5f5f5" Margin="0,0,0,0">
+                <ScrollView HeightRequest="600" Orientation="Vertical">
+                    <ListView x:Name="lvRecordatorio"
+                               Grid.Row="1"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="1"
+                               ItemsSource="{Binding recordatorio}"
+                               RowHeight="180"
+                               SelectionMode="Single"
+                               ItemTapped="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="20">
+                                <Frame CornerRadius="10" 
+                                BorderColor="#f5f5f5" 
+                                Margin="14,6,14,10" 
+                                Padding="0">
+
+                                <StackLayout Background="#6E268B" 
+                                Orientation="Vertical" 
+                                Margin="0"  
+                                HeightRequest="40"
+                                VerticalOptions="StartAndExpand">
+
+                                <Label Text="{Binding Titulo_recordatorio}"
+                                 Grid.Column="0"
+                                 FontSize="20"
+                                 TextColor="White"
+                                 HorizontalOptions="StartAndExpand"
+                                 HorizontalTextAlignment="Start"/>
+
+                                <Label Text="{Binding Descripcion_recordatorio}"
+                                 Grid.Column="1"   
+                                 FontSize="20"
+                                 TextColor="#B4A4BC"
+                                 HorizontalOptions="StartAndExpand"
+                                 HorizontalTextAlignment="Start"/>
+
+                                <Label Text="{Binding Fecha_inicio}"
+                                 Grid.Column="2"
+                                 FontSize="20"
+                                 TextColor="#B4A4BC"
+                                 HorizontalOptions="StartAndExpand"
+                                 HorizontalTextAlignment="Start"/>
+
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

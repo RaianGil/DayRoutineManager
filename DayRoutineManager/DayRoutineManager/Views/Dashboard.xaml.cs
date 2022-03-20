@@ -19,8 +19,7 @@ namespace DayRoutineManager.Views
         public Dashboard()
         {
             InitializeComponent();
-            //loadDependeiente();zz
-            // loadRecordatorio();
+
             BindingContext = new AdminDependiente();
         }
 
@@ -66,15 +65,6 @@ namespace DayRoutineManager.Views
         }*/
 
 
-       /* public async void lvDashboard_ItemTapped(object sender, ItemTappedEventArgs args)
-        {
-            var detailDependiente = args.Item as DependienteModel;
-            if (detailDependiente == null) return;
-
-            await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
-            lvDashboard.SelectedItem = null;
-        }*/
-
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
             var detailDependiente = args.Item as DependienteModel;
@@ -82,6 +72,6 @@ namespace DayRoutineManager.Views
 
             await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
             lvDashboard.SelectedItem = null;
-        }   
+        }
     }
 }

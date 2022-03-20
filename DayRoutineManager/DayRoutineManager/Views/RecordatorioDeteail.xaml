@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="DayRoutineManager.Views.DetailedDependiente"
-             Background="#f5f5f5">
-
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DayRoutineManager.Views.RecordatorioDeteail"
+             BackgroundColor="#f5f5f5">
+             
     <ContentPage.Content>
         <Frame  Margin="20,80,20,80"  CornerRadius="6"  >
             <StackLayout Padding="10,20,10,0">
 
-                <Label Text="{Binding Nombre_dependiente}" HorizontalOptions="Center" TextColor="Black" FontSize="Large"/>
+                <Label Text="{Binding Titulo_recordatorio}" HorizontalOptions="Center" TextColor="Black" FontSize="Large"/>
 
-                <Entry x:Name="idDependiente"  Text="{Binding AdminDependiente_id}"/>
-                <Entry x:Name="nombreDependiente"  Text="{Binding Nombre_dependiente}"/>
-                <Entry x:Name="codigoDependiente" Text="{Binding codigo_dependiente}"/>
+                <Entry x:Name="titulo_recordatorio" Text="{Binding Titulo_recordatorio}"/>
+                <Entry x:Name="descripcion_recordatorio" Text="{Binding Descripcion_recordatorio}"/>
+                <Entry x:Name="fecha_recordatorio" Text="{Binding Fecha_inicio}"/>
 
                 <Button x:Name="btnUpdate" Text="Actualizar" Margin="0,30,0,10" Background="#6E268B" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#CD7EF5" BorderWidth="1.5" Clicked="btnUpdate_Clicked"/>
                 <Button x:Name="btnDelete" Text="Eliminar" Background="#e5d3e8" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#6E268B" BorderWidth="1.5" Clicked="btnDelete_Clicked"/>
-            
-        </StackLayout>
+
+            </StackLayout>
         </Frame>
     </ContentPage.Content>
 </ContentPage>

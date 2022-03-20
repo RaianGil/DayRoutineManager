@@ -13,11 +13,11 @@
                                FontSize="Medium"
                                
                                />
-                        <Entry x:Name="entTituloRecordatorio" Placeholder="Nombre recordatorio" />
+                        <Entry x:Name="entTituloRecordatorio" Placeholder="Nombre Recordatorio" />
                         <Label Text="Descripcion" 
                                FontSize="Medium"
                            TextColor="Black"/>
-                        <Editor x:Name="edDescripcionRecordatorio" Placeholder="Describcion" />
+                        <Editor x:Name="edDescripcionRecordatorio" Placeholder="Descripcion" />
                         <Label Text="Fecha/Hora"
                                FontSize="Medium"
                                TextColor="Black"/>
@@ -28,7 +28,7 @@
                                 TextColor="White"
                                 FontAttributes="Bold"
                                 CornerRadius="5"
-                                Background="#039be5"
+                                Background="#e5d3e8"
                                 Clicked="btnSend_Clicked"/>
                     </StackLayout>
                 </Grid>

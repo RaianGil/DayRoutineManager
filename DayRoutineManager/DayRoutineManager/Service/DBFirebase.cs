@@ -52,7 +52,9 @@ namespace DayRoutineManager.Service
                .Child("Dependiente")
                .OnceAsync<Dependiente>()).FirstOrDefault(a => a.Object.codigo_dependiente == CrossDeviceInfo.Current.Id);
         }
+        /*Mantenimiento Dependiente*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        /*Display Dependiente*/
         public ObservableCollection<DependienteModel> GetAdminDependientes()
         {
             var DependienteData = client
@@ -62,7 +64,7 @@ namespace DayRoutineManager.Service
 
             return DependienteData;
         }
-
+        /*Agruegar Dependiente*/
         public async Task AddDependiente(string adminDependiente_id, string Nombre_dependiente, string codigo_dependiente)
         {
             DependienteModel dependiente = new DependienteModel()
@@ -73,7 +75,7 @@ namespace DayRoutineManager.Service
                 .Child("AdminDependiente")
                 .PostAsync(dependiente);
         }
-        /*agregar el id al update*/
+        /*Actualizar Dependiente*/
         public async Task UpdateDependiente(string Nombre_dependiente, string codigo_dependiente, string adminDependiente_id)
         {
             var updateDependiente = (await client
@@ -90,7 +92,7 @@ namespace DayRoutineManager.Service
                 .Child(updateDependiente.Key)
                 .PutAsync(admindep);
         }
-
+        /*Eliminar Dependiente*/
         public async Task DeleteDependiente(string adminDependiente_id, string Nombre_dependiente, string codigo_dependiente)
         {
             var deleteDependiente = (await client
@@ -101,6 +103,63 @@ namespace DayRoutineManager.Service
                 a.Object.codigo_dependiente == codigo_dependiente);
             await client.Child("AdminDependiente").Child(deleteDependiente.Key).DeleteAsync();
         }
+         /*Mantenimiento Recordatorio*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+        /*Display Recordatorio*/
+        public ObservableCollection<RecortadorioModel> GetAdminRecordatorio()
+        {
+            var RecordatorioData = client
+                .Child("Recordatorio")
+                .AsObservable<RecortadorioModel>()
+                .AsObservableCollection();
+
+            return RecordatorioData;
+        }
+        
+        /*Agruegar Recordatorio*/
+        public async Task AddRecordatorio(string titulo_recordatorio, string descripcion_recordatorio, DateTime fecha_inicio)
+        {
+            RecortadorioModel recordatorio = new RecortadorioModel()
+            {
+                 Titulo_recordatorio = titulo_recordatorio,
+                Descripcion_recordatorio = descripcion_recordatorio,
+                Fecha_inicio = fecha_inicio
+            };
+            
+            await client
+            .Child("Recordatorio")
+            .PostAsync(recordatorio);
+        }
+        
+        /*Actualizar Recordatorio*/
+        public async Task UpdateRecordatorio(string titulo_recordatorio, string descripcion_recordatorio, DateTime fecha_inicio)
+        {
+            var updateRecordatorio = (await client
+                .Child("Recordatorio")
+                .OnceAsync<RecortadorioModel>()).FirstOrDefault
+                (a => a.Object.Titulo_recordatorio == titulo_recordatorio ||
+                a.Object.Descripcion_recordatorio == descripcion_recordatorio ||
+                a.Object.Fecha_inicio == fecha_inicio);
+
+            RecortadorioModel adminrecordatorio = new RecortadorioModel()
+            { Titulo_recordatorio = titulo_recordatorio, Descripcion_recordatorio = descripcion_recordatorio, Fecha_inicio = fecha_inicio };
+            await client
+                .Child("Recordatorio")
+                .Child(updateRecordatorio.Key)
+                .PutAsync(adminrecordatorio);
+        }
+        
+        /*Eliminar Recordatorio*/
+        public async Task DeleteRecordatorio(string titulo_recordatorio, string descripcion_recordatorio, DateTime fecha_inicio)
+        {
+            var deleteRecordatorio = (await client
+                .Child("Recordatorio")
+                .OnceAsync<RecortadorioModel>()).FirstOrDefault
+                (a => a.Object.Titulo_recordatorio == titulo_recordatorio ||
+                a.Object.Descripcion_recordatorio == descripcion_recordatorio ||
+                a.Object.Fecha_inicio == fecha_inicio);
+            await client.Child("Recordatorio").Child(deleteRecordatorio.Key).DeleteAsync();
+        }
     }
 }
