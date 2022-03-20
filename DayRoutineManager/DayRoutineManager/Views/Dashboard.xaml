@@ -80,7 +80,7 @@
                                                            />
                                             </StackLayout>
                                                 <Button x:Name="btnAddRecordatorio"
-                                                        Background="#e5d3e8"
+                                                        Background="#CD7EF5"
                                                         Text="Agregar Recordatorio"
                                                         TextColor="White"
                                                         BindingContext="{}"

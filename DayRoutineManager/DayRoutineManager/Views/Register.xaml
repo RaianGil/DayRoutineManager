@@ -27,7 +27,7 @@
                 CornerRadius="10"
                 VerticalOptions="EndAndExpand"
                 Clicked="btnRecordatorio_Clicked"
-                TextColor="White" Margin="14,12,14,0" FontAttributes="Bold" Background="#e5d3e8" />
+                TextColor="White" Margin="14,12,14,0" FontAttributes="Bold" Background="#CD7EF5" />
             </StackLayout>
 
         </StackLayout>

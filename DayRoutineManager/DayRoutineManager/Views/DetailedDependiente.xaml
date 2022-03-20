@@ -15,7 +15,7 @@
                 <Entry x:Name="codigoDependiente" Text="{Binding codigo_dependiente}"/>
 
                 <Button x:Name="btnUpdate" Text="Actualizar" Margin="0,30,0,10" Background="#6E268B" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#CD7EF5" BorderWidth="1.5" Clicked="btnUpdate_Clicked"/>
-                <Button x:Name="btnDelete" Text="Eliminar" Background="#e5d3e8" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#6E268B" BorderWidth="1.5" Clicked="btnDelete_Clicked"/>
+                <Button x:Name="btnDelete" Text="Eliminar" Background="#CD7EF5" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#6E268B" BorderWidth="1.5" Clicked="btnDelete_Clicked"/>
             
         </StackLayout>
         </Frame>
