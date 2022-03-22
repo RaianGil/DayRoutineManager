@@ -46,7 +46,7 @@
                                TextColor="Black"
                                Placeholder="Dias"/>
                         
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" WidthRequest="5" Margin="0">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" WidthRequest="5">
                         <Button x:Name="btnSend"
                                 Text="Normal"
                                 TextColor="White"
@@ -79,7 +79,7 @@
                                     BorderColor="#CD7EF5"
                                     Clicked="btnSendDias_Clicked"
                                     />
-                        </StackLayout>
+                            </StackLayout>
                     </StackLayout>
                 </Grid>
             </Frame>
