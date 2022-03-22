@@ -5,7 +5,8 @@
              x:Class="DayRoutineManager.Popups.popAgregarRecordatorio">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-            <Frame Margin="22,0,22,0" CornerRadius="5">
+            <ScrollView HeightRequest="600" Orientation="Vertical">
+            <Frame Margin="22,64,22,64" CornerRadius="10">
                 <Grid>
                     <StackLayout>
                         <Label Text="Titulo Recordatorio" 
@@ -13,26 +14,76 @@
                                FontSize="Medium"
                                
                                />
-                        <Entry x:Name="entTituloRecordatorio" Placeholder="Nombre Recordatorio" />
+                        <Entry x:Name="entTituloRecordatorio" 
+                               Placeholder="Nombre Recordatorio"
+                               Text="{Binding Titulo_recordatorio}"/>
+
                         <Label Text="Descripcion" 
                                FontSize="Medium"
                            TextColor="Black"/>
-                        <Editor x:Name="edDescripcionRecordatorio" Placeholder="Descripcion" />
+                        <Editor x:Name="edDescripcionRecordatorio" 
+                                Placeholder="Descripcion" 
+                                Text="{Binding Descripcion_recordatorio}"/>
+
                         <Label Text="Fecha/Hora"
                                FontSize="Medium"
                                TextColor="Black"/>
                         <Entry x:Name="entHoraTarea"
+                               TextColor="Black"
+                               BindingContext=""/>
+
+                        <Label Text="Lapso/Horas"
+                               FontSize="Medium"
                                TextColor="Black"/>
+                        <Entry x:Name="HorasRecordatorio"
+                               TextColor="Black"
+                               Placeholder="Horas"/>
+
+                        <Label Text="Lapso/Dias"
+                               FontSize="Medium"
+                               TextColor="Black"/>
+                        <Entry x:Name="DiasRecordatorio"
+                               TextColor="Black"
+                               Placeholder="Dias"/>
+                        
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" WidthRequest="5" Margin="0">
                         <Button x:Name="btnSend"
-                                Text="Crear Recordatorio"
+                                Text="Normal"
                                 TextColor="White"
-                                FontAttributes="Bold"
-                                CornerRadius="5"
-                                Background="#e5d3e8"
-                                Clicked="btnSend_Clicked"/>
+                                FontAttributes="None"
+                                FontSize="Small"
+                                CornerRadius="15"
+                                Background="#6E268B"
+                                BorderColor="#CD7EF5"
+                                Clicked="btnSend_Clicked"
+                                />
+                            
+                            <Button x:Name="btnSendHoras"
+                                    Text="Horas"
+                                    TextColor="White"
+                                    FontSize="Small"
+                                    FontAttributes="None"
+                                    CornerRadius="15"
+                                    Background="#6E268B"
+                                    BorderColor="#CD7EF5"
+                                    Clicked="btnSendHoras_Clicked"
+                                    />
+                            
+                            <Button x:Name="btnSendDias"
+                                    Text="Diario"
+                                    TextColor="White"
+                                    FontSize="Small"                                   
+                                    FontAttributes="None"
+                                    CornerRadius="15"
+                                    Background="#6E268B"
+                                    BorderColor="#CD7EF5"
+                                    Clicked="btnSendDias_Clicked"
+                                    />
+                        </StackLayout>
                     </StackLayout>
                 </Grid>
             </Frame>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </popup:PopupPage>

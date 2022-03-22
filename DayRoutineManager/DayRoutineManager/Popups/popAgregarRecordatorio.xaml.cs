@@ -1,4 +1,5 @@
 ﻿using DayRoutineManager.TblModels;
+using DayRoutineManager.Views;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Plugin.LocalNotification;
@@ -23,31 +24,39 @@ namespace DayRoutineManager.Popups
         {
             InitializeComponent();
             entHoraTarea.Text = DateTime.Now.ToString("MM/dd/yyy HH:mm");
+            BindingContext = new AdminRecordatorio();
         }
 
-        private void btnSend_Clicked(object sender, EventArgs e)
+        public async void btnSend_Clicked(object sender, EventArgs e)
         {
-
-            firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
-            {
-                id_recordatorio = Guid.NewGuid().ToString(),
-                Titulo_recordatorio = entTituloRecordatorio.Text,
-                Descripcion_recordatorio = edDescripcionRecordatorio.Text,
-                Fecha_inicio = DateTime.Parse(entHoraTarea.Text)
-            });
+            CloudAddedRecordatorio();
             addNotificationDependiente();
+            await Navigation.PushAsync(new Dashboard());
+        }
 
-            /* Console.WriteLine(codigo_dependiente);
-             var conn = Connection.LocalConn.get();
-             var inRecordatorio = new Recordatorio
-             {
-                 id_recordatorio = Guid.NewGuid().ToString(),
-                 titulo_recordatorio = entTituloRecordatorio.Text,
-                 descripcion_recordatorio = edDescripcionRecordatorio.Text,
-                 codigo_dependiente = codigo_dependiente,
-                 fecha_inicio = DateTime.Parse(entHoraTarea.Text)
-             };
-             conn.Insert(inRecordatorio);*/
+
+        public async void btnSendHoras_Clicked(object sender, EventArgs e)
+        {
+            CloudAddedRecordatorio();
+            hourNotification();
+            await Navigation.PushAsync(new Dashboard());
+            if (HorasRecordatorio.Text == null)
+            {
+                await DisplayAlert("Alert", "Lapso/Horas campo requerido", "Ok");
+            }
+            return;
+        }
+
+        private async void btnSendDias_Clicked(object sender, EventArgs e)
+        {
+            CloudAddedRecordatorio();
+            dailyNotification();
+            await Navigation.PushAsync(new Dashboard());
+            if (DiasRecordatorio.Text == null)
+            {
+                await DisplayAlert("Alert", "Lapso/Dias campo requerido", "Ok");
+            }
+            return;
         }
 
         private void addNotificationDependiente()
@@ -68,5 +77,58 @@ namespace DayRoutineManager.Popups
             };
             NotificationCenter.Current.Show(notification);
         }
+
+        private void dailyNotification()
+        {
+            int Next = rdn.Next();
+            Console.WriteLine(Next);
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = edDescripcionRecordatorio.Text,
+                Title = entTituloRecordatorio.Text,
+                ReturningData = "Datos añadidos exitosamente!",
+                NotificationId = Next,
+                Schedule =
+                {
+                    NotifyTime = DateTime.Parse(entHoraTarea.Text),
+                    NotifyRepeatInterval = TimeSpan.FromDays(Int32.Parse(DiasRecordatorio.Text))
+                }
+            };
+            NotificationCenter.Current.Show(notification);
+        }
+
+        private void hourNotification()
+        {
+            int Next = rdn.Next();
+            Console.WriteLine(Next);
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = edDescripcionRecordatorio.Text,
+                Title = entTituloRecordatorio.Text,
+                ReturningData = "Datos añadidos exitosamente!",
+                NotificationId = Next,
+                Schedule =
+                {
+                    NotifyTime = DateTime.Parse(entHoraTarea.Text),
+                    NotifyRepeatInterval = TimeSpan.FromHours(Int32.Parse(HorasRecordatorio.Text))
+                }
+            };
+            NotificationCenter.Current.Show(notification);
+        }
+
+        private void CloudAddedRecordatorio()
+        {
+            firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
+            {
+                id_recordatorio = Guid.NewGuid().ToString(),
+                Titulo_recordatorio = entTituloRecordatorio.Text,
+                Descripcion_recordatorio = edDescripcionRecordatorio.Text,
+                Fecha_inicio = DateTime.Parse(entHoraTarea.Text)
+            });
+        }
+
+      
     }
 }
