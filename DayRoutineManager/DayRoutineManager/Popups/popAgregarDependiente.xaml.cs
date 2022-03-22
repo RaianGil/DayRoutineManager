@@ -20,26 +20,20 @@ namespace DayRoutineManager.Popups
             BindingContext = new AdminDependiente();
         }
 
-        private void BtnAgregar_Clicked(object sender, EventArgs e)
+        private async void BtnAgregar_Clicked(object sender, EventArgs e)
         {
-            // CloudaddDependiente();
-           // LocaladdDependiente();
-            Codigotxt.Text = "";
-            Nombretxt.Text = "";
-            //addNotificationDependiente();
-           
-        }
-
-        private void CloudaddDependiente()
-        {
-            firebaseClient.Child("DependienteAdmin").PostAsync(new AdminDependiente
+            if (Nombretxt.Text == null)
             {
-                AdminDependiente_id = Guid.NewGuid().ToString()
-                //codigo_dependiente = Codigotxt.Text,
-              //  Nombre_dependiente = Nombretxt.Text
-            });
-
+                await DisplayAlert("Alert", "Nombre \nCAMPO REQUERIDO", "Ok");
+            }
+            else
+            {
+                Codigotxt.Text = "";
+                Nombretxt.Text = "";
+            }
+            
         }
+
 
         private void LocaladdDependiente()
         {
@@ -53,21 +47,5 @@ namespace DayRoutineManager.Popups
             conn.Insert(insertDependiente);
         }
 
-        private void addNotificationDependiente()
-        {
-            var notification = new NotificationRequest
-            {
-                BadgeNumber = 1,
-                Description = "Datos añadidos exitosamente!",
-                Title = "Datos Actualizados",
-                ReturningData = "Datos añadidos exitosamente!",
-                NotificationId = 111,
-                Schedule =
-                {
-                    NotifyTime = DateTime.Parse("03/04/2022 12:30")
-                }
-            };
-             NotificationCenter.Current.Show(notification);
-        }
      }
 }

@@ -21,6 +21,8 @@ namespace DayRoutineManager.Views
             InitializeComponent();
 
             BindingContext = new AdminDependiente();
+
+          
         }
 
         private void BtnAgregarDep_Clicked(object sender, EventArgs e)
@@ -73,5 +75,13 @@ namespace DayRoutineManager.Views
             await Navigation.PushAsync(new DetailedDependiente(detailDependiente));
             lvDashboard.SelectedItem = null;
         }
+
+        private async void btnback_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Register());
+        }
+
+        
     }
+
 }

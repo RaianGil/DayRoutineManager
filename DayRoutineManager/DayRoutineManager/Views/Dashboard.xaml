@@ -7,8 +7,14 @@
         <StackLayout >
             <!--Header-->
                        <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#6E268B">
-                       <Image Source="LogoCompletoSinFondo" WidthRequest="60"  Margin="10,0,0,0"></Image>
-                       <Label Text="Administrador"
+                <Button x:Name="btnback" 
+                        BackgroundColor="Transparent" 
+                        WidthRequest="60"  
+                        Margin="10,0,0,0" 
+                        Text="&#10094;"
+                        Clicked="btnback_Clicked"/>
+                           
+                <Label Text="Administrador"
                        Padding="20,24,0,0"
                        FontSize="Medium"
                        TextColor="White"
@@ -26,7 +32,8 @@
                                Margin="14,12,14,0" 
                                TextColor="White" 
                                CornerRadius="100" 
-                               Background="#e5d3e8"/>
+                               Background="#CD7EF5"
+                               BorderColor="#6E268B"/>
 
                     <!--<Button Text="Recordatorios" 
                                x:Name="BtnRecordatorios" 

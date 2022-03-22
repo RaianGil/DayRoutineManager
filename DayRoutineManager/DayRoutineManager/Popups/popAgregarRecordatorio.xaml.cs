@@ -40,11 +40,7 @@ namespace DayRoutineManager.Popups
             CloudAddedRecordatorio();
             hourNotification();
             await Navigation.PushAsync(new Dashboard());
-            if (HorasRecordatorio.Text == null)
-            {
-                await DisplayAlert("Alert", "Lapso/Horas campo requerido", "Ok");
-            }
-            return;
+           
         }
 
         private async void btnSendDias_Clicked(object sender, EventArgs e)
@@ -52,11 +48,7 @@ namespace DayRoutineManager.Popups
             CloudAddedRecordatorio();
             dailyNotification();
             await Navigation.PushAsync(new Dashboard());
-            if (DiasRecordatorio.Text == null)
-            {
-                await DisplayAlert("Alert", "Lapso/Dias campo requerido", "Ok");
-            }
-            return;
+            
         }
 
         private void addNotificationDependiente()
@@ -78,55 +70,79 @@ namespace DayRoutineManager.Popups
             NotificationCenter.Current.Show(notification);
         }
 
-        private void dailyNotification()
+        private async void dailyNotification()
         {
-            int Next = rdn.Next();
-            Console.WriteLine(Next);
-            var notification = new NotificationRequest
+
+            if (DiasRecordatorio.Text == null)
             {
-                BadgeNumber = 1,
-                Description = edDescripcionRecordatorio.Text,
-                Title = entTituloRecordatorio.Text,
-                ReturningData = "Datos añadidos exitosamente!",
-                NotificationId = Next,
-                Schedule =
+                await DisplayAlert("Alert", "Lapso/Dias \nCAMPO REQUERIDO", "Ok");
+            }
+            else
+            {
+                int Next = rdn.Next();
+                Console.WriteLine(Next);
+                var notification = new NotificationRequest
+                {
+                    BadgeNumber = 1,
+                    Description = edDescripcionRecordatorio.Text,
+                    Title = entTituloRecordatorio.Text,
+                    ReturningData = "Datos añadidos exitosamente!",
+                    NotificationId = Next,
+                    Schedule =
                 {
                     NotifyTime = DateTime.Parse(entHoraTarea.Text),
                     NotifyRepeatInterval = TimeSpan.FromDays(Int32.Parse(DiasRecordatorio.Text))
                 }
-            };
-            NotificationCenter.Current.Show(notification);
+                };
+                NotificationCenter.Current.Show(notification);
+            }
+
         }
 
-        private void hourNotification()
+        private async void hourNotification()
         {
-            int Next = rdn.Next();
-            Console.WriteLine(Next);
-            var notification = new NotificationRequest
+            if (HorasRecordatorio.Text == null)
             {
-                BadgeNumber = 1,
-                Description = edDescripcionRecordatorio.Text,
-                Title = entTituloRecordatorio.Text,
-                ReturningData = "Datos añadidos exitosamente!",
-                NotificationId = Next,
-                Schedule =
+                await DisplayAlert("Alert", "Lapso/Horas \nCAMPO REQUERIDO", "Ok");
+            }
+            else
+            {
+                int Next = rdn.Next();
+                Console.WriteLine(Next);
+                var notification = new NotificationRequest
+                {
+                    BadgeNumber = 1,
+                    Description = edDescripcionRecordatorio.Text,
+                    Title = entTituloRecordatorio.Text,
+                    ReturningData = "Datos añadidos exitosamente!",
+                    NotificationId = Next,
+                    Schedule =
                 {
                     NotifyTime = DateTime.Parse(entHoraTarea.Text),
                     NotifyRepeatInterval = TimeSpan.FromHours(Int32.Parse(HorasRecordatorio.Text))
                 }
-            };
-            NotificationCenter.Current.Show(notification);
+                };
+                NotificationCenter.Current.Show(notification);
+
+            }
         }
 
-        private void CloudAddedRecordatorio()
+        private async void CloudAddedRecordatorio()
         {
-            firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
+            if (entTituloRecordatorio.Text == null)
             {
-                id_recordatorio = Guid.NewGuid().ToString(),
-                Titulo_recordatorio = entTituloRecordatorio.Text,
-                Descripcion_recordatorio = edDescripcionRecordatorio.Text,
-                Fecha_inicio = DateTime.Parse(entHoraTarea.Text)
-            });
+                await DisplayAlert("Alert", "Titulo del recordatorio \nCAMPO REQUERIDO", "Ok");
+            }
+            else
+            {
+                firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
+                {
+                    id_recordatorio = Guid.NewGuid().ToString(),
+                    Titulo_recordatorio = entTituloRecordatorio.Text,
+                    Descripcion_recordatorio = edDescripcionRecordatorio.Text,
+                    Fecha_inicio = DateTime.Parse(entHoraTarea.Text)
+                });
+            }
         }
 
     }
