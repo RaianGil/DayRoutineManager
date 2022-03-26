@@ -14,8 +14,9 @@
                 <Entry x:Name="nombreDependiente"  Text="{Binding Nombre_dependiente}"/>
                 <Entry x:Name="codigoDependiente" Text="{Binding codigo_dependiente}"/>
 
-                <Button x:Name="btnUpdate" Text="Actualizar" Margin="0,30,0,10" Background="#6E268B" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#CD7EF5" BorderWidth="1.5" Clicked="btnUpdate_Clicked"/>
-                <Button x:Name="btnDelete" Text="Eliminar" Background="#CD7EF5" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#6E268B" BorderWidth="1.5" Clicked="btnDelete_Clicked"/>
+
+                <Button x:Name="btnUpdate" Text="Actualizar" Margin="30,30,30,10" Background="#CD7EF5" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#CD7EF5" BorderWidth="1.5" Clicked="btnUpdate_Clicked"/>
+                <Button x:Name="btnDelete" Text="Eliminar" Background="#ff94c2" Margin="30,0,30,0" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#ff94c2" BorderWidth="1.5" Clicked="btnDelete_Clicked"/>
             
         </StackLayout>
         </Frame>

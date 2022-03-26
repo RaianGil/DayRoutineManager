@@ -8,26 +8,23 @@
             <Grid  >
                 <Image Source="LogoCompletoSinFondo"  />
             </Grid>
-            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+            <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="250" Orientation="Vertical">
                 <Button
                 Text="Iniciar"         
-                x:Name="btnIniciar"
-                BorderColor="#CD7EF5"
-                BorderWidth="1.5"
-                CornerRadius="10"
+                x:Name="btnIniciar"               
+                CornerRadius="14"                
                 VerticalOptions="EndAndExpand"
                 Clicked="btnIniciar_Clicked"
-                TextColor="White" Margin="14,12,14,0" FontAttributes="Bold" Background="#6E268B" />
-                
+                TextColor="White" Margin="10,12,10,0" FontAttributes="Bold" Background="#ff94c2" />
+               
+
                 <Button
                 Text="Recordatorios"
-                x:Name="btnRecordatorio"
-                BorderColor="#6E268B"
-                BorderWidth="1.5"
-                CornerRadius="10"
+                x:Name="btnRecordatorio"              
+                CornerRadius="14"
                 VerticalOptions="EndAndExpand"
                 Clicked="btnRecordatorio_Clicked"
-                TextColor="White" Margin="14,12,14,0" FontAttributes="Bold" Background="#CD7EF5" />
+                TextColor="White" Margin="10,12,10,0" FontAttributes="Bold" Background="#CD7EF5" />
             </StackLayout>
 
         </StackLayout>
