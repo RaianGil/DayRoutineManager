@@ -19,7 +19,7 @@ namespace DayRoutineManager
             conn.CreateTable<TblModels.AdminDependiente>();*/
             MainPage = new NavigationPage(new Views.Register());
             CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
-            NotificationCenter.Current.NotificationTapped += Current_NotificationTapped;
+            //NotificationCenter.Current.NotificationTapped += Current_NotificationTapped;
         }
 
         private void Current_NotificationTapped(Plugin.LocalNotification.EventArgs.NotificationEventArgs e)

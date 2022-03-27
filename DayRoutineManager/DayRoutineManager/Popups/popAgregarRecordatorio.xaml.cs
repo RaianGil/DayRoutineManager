@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,8 +28,27 @@ namespace DayRoutineManager.Popups
 
         public async void btnSend_Clicked(object sender, EventArgs e)
         {
-            CloudAddedRecordatorio();
+           if (HorasRecordatorio.Text != null)
+            {
+                hourNotification();
+                addNotificationDependiente();
+                CloudAddedRecordatorio();
+            }
+           if (DiasRecordatorio.Text != null)
+            {
+                dailyNotification();
+                addNotificationDependiente();
+                CloudAddedRecordatorio();
+            }
+           else
+            {
+                CloudAddedRecordatorio();
+                addNotificationDependiente();
+            }
+            /* CloudAddedRecordatorio();
             addNotificationDependiente();
+            await Navigation.PushAsync(new Dashboard());*/
+
             await Navigation.PushAsync(new Dashboard());
         }
 
@@ -40,7 +58,6 @@ namespace DayRoutineManager.Popups
             CloudAddedRecordatorio();
             hourNotification();
             await Navigation.PushAsync(new Dashboard());
-           
         }
 
         private async void btnSendDias_Clicked(object sender, EventArgs e)
@@ -51,31 +68,11 @@ namespace DayRoutineManager.Popups
             
         }
 
-        private void addNotificationDependiente()
+        private async void addNotificationDependiente()
         {
-            int Next = rdn.Next();
-            Console.WriteLine(Next);
-            var notification = new NotificationRequest
+            if (entTituloRecordatorio.Text == null)
             {
-                BadgeNumber = 1,
-                Description = edDescripcionRecordatorio.Text,
-                Title = entTituloRecordatorio.Text,
-                ReturningData = "Datos añadidos exitosamente!",
-                NotificationId = Next,
-                Schedule =
-                {
-                    NotifyTime = DateTime.Parse(entHoraTarea.Text)
-                }
-            };
-            NotificationCenter.Current.Show(notification);
-        }
-
-        private async void dailyNotification()
-        {
-
-            if (DiasRecordatorio.Text == null)
-            {
-                await DisplayAlert("Alert", "Lapso/Dias \nCAMPO REQUERIDO", "Ok");
+                await DisplayAlert("Campo Obligatorio", "Titulo del recordatorio \nCAMPO REQUERIDO", "Ok");
             }
             else
             {
@@ -88,25 +85,48 @@ namespace DayRoutineManager.Popups
                     Title = entTituloRecordatorio.Text,
                     ReturningData = "Datos añadidos exitosamente!",
                     NotificationId = Next,
-                    Schedule =
-                {
-                    NotifyTime = DateTime.Parse(entHoraTarea.Text),
-                    NotifyRepeatInterval = TimeSpan.FromDays(Int32.Parse(DiasRecordatorio.Text))
-                }
+                    Schedule = 
+                    {
+                        NotifyTime = DateTime.Parse(entHoraTarea.Text)
+                    }
                 };
                 NotificationCenter.Current.Show(notification);
+            }
+        }
+
+        private async void dailyNotification()
+        {
+            double v;
+            if (double.TryParse(DiasRecordatorio.Text, out v))
+            {
+
+                int Next = rdn.Next();
+                Console.WriteLine(Next);
+                var notification = new NotificationRequest
+                {
+                    BadgeNumber = 1,
+                    Description = edDescripcionRecordatorio.Text,
+                    Title = entTituloRecordatorio.Text,
+                    NotificationId = Next,
+                    Schedule =
+                    {
+                        NotifyTime = DateTime.Parse(entHoraTarea.Text),
+                        NotifyRepeatInterval = TimeSpan.FromDays(double.Parse(DiasRecordatorio.Text))
+                    }
+                };
+                NotificationCenter.Current.Show(notification);
+            }
+
+            else
+            {
+                await DisplayAlert("Datos incorrectos", "Ejemplo de Formato Correcto de datos: \n1.0 y 2.0", "Ok");
             }
 
         }
 
         private async void hourNotification()
         {
-            if (HorasRecordatorio.Text == null)
-            {
-                await DisplayAlert("Alert", "Lapso/Horas \nCAMPO REQUERIDO", "Ok");
-            }
-            else
-            {
+          
                 int Next = rdn.Next();
                 Console.WriteLine(Next);
                 var notification = new NotificationRequest
@@ -116,22 +136,21 @@ namespace DayRoutineManager.Popups
                     Title = entTituloRecordatorio.Text,
                     ReturningData = "Datos añadidos exitosamente!",
                     NotificationId = Next,
-                    Schedule =
-                {
-                    NotifyTime = DateTime.Parse(entHoraTarea.Text),
-                    NotifyRepeatInterval = TimeSpan.FromHours(Int32.Parse(HorasRecordatorio.Text))
-                }
+                    Schedule = 
+                    {
+                        NotifyTime = DateTime.Parse(entHoraTarea.Text),
+                        NotifyRepeatInterval = TimeSpan.FromHours(Int32.Parse(HorasRecordatorio.Text))
+                    }
                 };
                 NotificationCenter.Current.Show(notification);
-
-            }
+            
         }
 
         private async void CloudAddedRecordatorio()
         {
-            if (entTituloRecordatorio.Text == null)
+            if (entTituloRecordatorio == null)
             {
-                await DisplayAlert("Alert", "Titulo del recordatorio \nCAMPO REQUERIDO", "Ok");
+                entTituloRecordatorio.Focus();
             }
             else
             {
@@ -143,6 +162,7 @@ namespace DayRoutineManager.Popups
                     Fecha_inicio = DateTime.Parse(entHoraTarea.Text)
                 });
             }
+
         }
 
     }
