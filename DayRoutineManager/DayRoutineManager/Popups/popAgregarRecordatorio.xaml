@@ -53,8 +53,8 @@
                                 FontAttributes="None"
                                 FontSize="Small"
                                 CornerRadius="15"
-                                Background="#6E268B"
-                                BorderColor="#CD7EF5"
+                                Background="#CD7EF5"
+                                
                                 Clicked="btnSend_Clicked"
                                 />
                             
@@ -64,8 +64,8 @@
                                     FontSize="Small"
                                     FontAttributes="None"
                                     CornerRadius="15"
-                                    Background="#6E268B"
-                                    BorderColor="#CD7EF5"
+                                    Background="#CD7EF5"
+                                    
                                     Clicked="btnSendHoras_Clicked"
                                     />
                             
@@ -75,8 +75,8 @@
                                     FontSize="Small"                                   
                                     FontAttributes="None"
                                     CornerRadius="15"
-                                    Background="#6E268B"
-                                    BorderColor="#CD7EF5"
+                                    Background="#CD7EF5"
+                                    
                                     Clicked="btnSendDias_Clicked"
                                     />
                             </StackLayout>

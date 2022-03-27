@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <!--Header-->
-            <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#6E268B">
+            <StackLayout HeightRequest="70" Orientation="Horizontal" Background="#ab47bc">
                 <Button
                     x:Name="btnBack"
                     Grid.Column="0"
@@ -23,9 +23,12 @@
                 
                 <Label Text="Recordatorios"
                        Grid.Column="1"
-                       Padding="20,24,0,0"
-                       FontSize="Medium"
+                       Padding="20,18,0,0"
+                       
+                       FontSize="Large"
                        TextColor="White"
+                       FontAttributes="Bold"
+                       
                         />
             </StackLayout>
             <!--Header-->
@@ -48,7 +51,7 @@
                                 Margin="14,6,14,10" 
                                 Padding="0">
 
-                                <StackLayout Background="#6E268B" 
+                               <StackLayout Background="#CD7EF5" 
                                 Orientation="Vertical" 
                                 Margin="0"  
                                 HeightRequest="40"
@@ -57,6 +60,8 @@
                                 <Label Text="{Binding Titulo_recordatorio}"
                                  Grid.Column="0"
                                  FontSize="20"
+                                 FontAttributes="Bold"
+                                 Margin="10,4,0,4"
                                  TextColor="White"
                                  HorizontalOptions="StartAndExpand"
                                  HorizontalTextAlignment="Start"/>
@@ -64,14 +69,18 @@
                                 <Label Text="{Binding Descripcion_recordatorio}"
                                  Grid.Column="1"   
                                  FontSize="20"
-                                 TextColor="#B4A4BC"
+                                 TextColor="Black"
+                                                            
+                                 Margin="10,6,0,4"
+                                 
                                  HorizontalOptions="StartAndExpand"
                                  HorizontalTextAlignment="Start"/>
 
                                 <Label Text="{Binding Fecha_inicio}"
                                  Grid.Column="2"
                                  FontSize="20"
-                                 TextColor="#B4A4BC"
+                                 TextColor="Black"                                                            
+                                  Margin="10,6,0,4"
                                  HorizontalOptions="StartAndExpand"
                                  HorizontalTextAlignment="Start"/>
 
