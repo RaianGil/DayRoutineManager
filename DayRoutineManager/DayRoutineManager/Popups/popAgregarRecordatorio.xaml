@@ -46,19 +46,20 @@
                                TextColor="Black"
                                Placeholder="Dias"/>
                         
-                        <StackLayout Orientation="Horizontal">
+                      <!--//  <StackLayout Orientation="Horizontal" >-->
                         <Button x:Name="btnSend"
-                                Text="Normal"
+                                Text="Guardar"
+                                HorizontalOptions="Center"                                                              
+                                VerticalOptions="Center"
                                 TextColor="White"
                                 FontAttributes="None"
                                 FontSize="Small"
                                 CornerRadius="15"
-                                Background="#CD7EF5"
-                                
+                                Background="#CD7EF5"                                
                                 Clicked="btnSend_Clicked"
                                 />
                             
-                            <Button x:Name="btnSendHoras"
+                            <!--<Button x:Name="btnSendHoras"
                                     Text="Horas"
                                     TextColor="White"
                                     FontSize="Small"
@@ -78,8 +79,8 @@
                                     Background="#CD7EF5"
                                     
                                     Clicked="btnSendDias_Clicked"
-                                    />
-                            </StackLayout>
+                                    />-->
+                            <!--</StackLayout>-->
                     </StackLayout>
                 </Grid>
             </Frame>

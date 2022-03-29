@@ -14,8 +14,10 @@
                 <Entry x:Name="descripcion_recordatorio" Text="{Binding Descripcion_recordatorio}"/>
                 <Entry x:Name="fecha_recordatorio" Text="{Binding Fecha_inicio}"/>
 
-                <Button x:Name="btnUpdate" Text="Actualizar" Margin="0,30,0,10" Background="#6E268B" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#CD7EF5" BorderWidth="1.5" Clicked="btnUpdate_Clicked"/>
-                <Button x:Name="btnDelete" Text="Eliminar" Background="#CD7EF5" TextColor="White" FontAttributes="Bold" CornerRadius="10" BorderColor="#6E268B" BorderWidth="1.5" Clicked="btnDelete_Clicked"/>
+
+
+                <Button x:Name="btnUpdate" Text="Actualizar" Margin="30,30,30,10" Background="#CD7EF5" TextColor="White" FontAttributes="Bold" CornerRadius="10"  BorderWidth="1.5" BorderColor="#CD7EF5" Clicked="btnUpdate_Clicked"/>
+                <Button x:Name="btnDelete" Text="Eliminar" Margin="30,0,30,10" Background="#ff94c2" TextColor="White" FontAttributes="Bold" CornerRadius="10"  BorderWidth="1.5"  BorderColor="#ff94c2" Clicked="btnDelete_Clicked"/>
 
             </StackLayout>
         </Frame>
