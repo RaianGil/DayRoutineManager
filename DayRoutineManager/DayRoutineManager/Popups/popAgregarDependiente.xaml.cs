@@ -1,7 +1,6 @@
 ﻿using DayRoutineManager.Models;
 using DayRoutineManager.Service;
 using DayRoutineManager.TblModels;
-using DayRoutineManager.Views;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Plugin.LocalNotification;
@@ -32,8 +31,6 @@ namespace DayRoutineManager.Popups
                 Codigotxt.Text = "";
                 Nombretxt.Text = "";
             }
-
-            await Navigation.PushAsync(new Dashboard());
             
         }
 

@@ -45,8 +45,27 @@ namespace DayRoutineManager.Popups
                 CloudAddedRecordatorio();
                 addNotificationDependiente();
             }
+            /* CloudAddedRecordatorio();
+            addNotificationDependiente();
+            await Navigation.PushAsync(new Dashboard());*/
 
             await Navigation.PushAsync(new Dashboard());
+        }
+
+
+        public async void btnSendHoras_Clicked(object sender, EventArgs e)
+        {
+            CloudAddedRecordatorio();
+            hourNotification();
+            await Navigation.PushAsync(new Dashboard());
+        }
+
+        private async void btnSendDias_Clicked(object sender, EventArgs e)
+        {
+            CloudAddedRecordatorio();
+            dailyNotification();
+            await Navigation.PushAsync(new Dashboard());
+            
         }
 
         private async void addNotificationDependiente()
