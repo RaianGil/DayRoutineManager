@@ -6,6 +6,7 @@ using Firebase.Database;
 using Firebase.Database.Query;
 using Plugin.LocalNotification;
 using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using Xamarin.Forms.Xaml;
 
@@ -25,16 +26,14 @@ namespace DayRoutineManager.Popups
         {
             if (Nombretxt.Text == null)
             {
-                await DisplayAlert("Alert", "Nombre \nCAMPO REQUERIDO", "Ok");
+                await DisplayAlert("ATENCION", "Nombre \nCAMPO REQUERIDO", "Ok");
             }
             else
             {
                 Codigotxt.Text = "";
                 Nombretxt.Text = "";
             }
-
-            await Navigation.PushAsync(new Dashboard());
-            
+            await PopupNavigation.PopAsync();
         }
 
 

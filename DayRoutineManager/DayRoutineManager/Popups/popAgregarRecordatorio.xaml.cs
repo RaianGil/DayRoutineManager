@@ -3,6 +3,7 @@ using DayRoutineManager.Views;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Plugin.LocalNotification;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,8 @@ namespace DayRoutineManager.Popups
                 addNotificationDependiente();
             }
 
-            await Navigation.PushAsync(new Dashboard());
+            await PopupNavigation.PopAsync();
+
         }
 
         private async void addNotificationDependiente()
