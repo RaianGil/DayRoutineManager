@@ -14,13 +14,17 @@ namespace DayRoutineManager
         {
             InitializeComponent();
             var conn = Connection.LocalConn.get();
+           /* conn.CreateTable<TblModels.Dependiente>();
+            conn.CreateTable<TblModels.Recordatorio>();
+            conn.CreateTable<TblModels.AdminDependiente>();*/
             MainPage = new NavigationPage(new Views.Register());
             CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
+            //NotificationCenter.Current.NotificationTapped += Current_NotificationTapped;
         }
 
         private void Current_NotificationTapped(Plugin.LocalNotification.EventArgs.NotificationEventArgs e)
         {
-             MainPage = new NavigationPage(new Views.Dashboard());        
+             MainPage = new NavigationPage(new Views.dependentDashboard());        
         }
 
         private void Current_OnTokenRefresh(object source, FirebasePushNotificationTokenEventArgs e)

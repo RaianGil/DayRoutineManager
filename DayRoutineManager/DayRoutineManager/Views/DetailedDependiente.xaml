@@ -10,7 +10,7 @@
 
                 <Label Text="{Binding Nombre_dependiente}" HorizontalOptions="Center" TextColor="Black" FontSize="Large"/>
 
-                <Entry x:Name="idDependiente"  Text="{Binding AdminDependiente_id}" IsVisible="false"/>
+                <Entry x:Name="idDependiente"  Text="{Binding AdminDependiente_id}"/>
                 <Entry x:Name="nombreDependiente"  Text="{Binding Nombre_dependiente}"/>
                 <Entry x:Name="codigoDependiente" Text="{Binding codigo_dependiente}"/>
             
