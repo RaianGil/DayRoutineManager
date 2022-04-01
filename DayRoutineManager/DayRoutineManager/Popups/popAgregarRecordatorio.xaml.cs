@@ -18,7 +18,7 @@ namespace DayRoutineManager.Popups
     public partial class popAgregarRecordatorio
     {
         Random rdn = new Random();
-        FirebaseClient firebaseClient = new FirebaseClient("https://dailyroutinemanager-36ce7-default-rtdb.firebaseio.com/");
+        FirebaseClient firebaseClient = new FirebaseClient("https://notidemo-e3f9b-default-rtdb.firebaseio.com/");
         public string codigo_dependiente;
         public popAgregarRecordatorio()
         {
@@ -29,13 +29,13 @@ namespace DayRoutineManager.Popups
 
         public async void btnSend_Clicked(object sender, EventArgs e)
         {
-           if (HorasRecordatorio.Text != null)
+            if (HorasRecordatorio.Text != null)
             {
                 hourNotification();
                 addNotificationDependiente();
                 CloudAddedRecordatorio();
             }
-           if (DiasRecordatorio.Text != null)
+            else if (DiasRecordatorio.Text != null)
             {
                 dailyNotification();
                 addNotificationDependiente();
@@ -137,7 +137,7 @@ namespace DayRoutineManager.Popups
             }
             else
             {
-                firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
+               await firebaseClient.Child("Recordatorio").PostAsync(new Recordatorio
                 {
                     id_recordatorio = Guid.NewGuid().ToString(),
                     Titulo_recordatorio = entTituloRecordatorio.Text,

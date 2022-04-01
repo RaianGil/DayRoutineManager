@@ -17,7 +17,7 @@ namespace DayRoutineManager.Service
         FirebaseClient client;
         public DBFirebase()
         {
-            client = new FirebaseClient("https://dailyroutinemanager-36ce7-default-rtdb.firebaseio.com/");
+            client = new FirebaseClient("https://notidemo-e3f9b-default-rtdb.firebaseio.com/");
         }
         public async void sendToken(string token)
         {
