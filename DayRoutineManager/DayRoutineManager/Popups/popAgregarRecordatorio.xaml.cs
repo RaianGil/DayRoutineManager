@@ -18,7 +18,7 @@ namespace DayRoutineManager.Popups
     public partial class popAgregarRecordatorio
     {
         Random rdn = new Random();
-        FirebaseClient firebaseClient = new FirebaseClient("https://notidemo-e3f9b-default-rtdb.firebaseio.com/");
+        FirebaseClient firebaseClient = new FirebaseClient("https://dayroutinemanager-f3555-default-rtdb.firebaseio.com/");
         public string codigo_dependiente;
         public popAgregarRecordatorio()
         {
